@@ -90,8 +90,8 @@
   --secondary-foreground: oklch(0.3270 0.0179 67.1);
   --muted: oklch(0.9327 0.0201 84.6);
   --muted-foreground: oklch(0.5044 0.0272 69.2);
-  --accent: oklch(0.7745 0.0602 83.9);
-  --accent-foreground: oklch(0.3270 0.0179 67.1);
+  --accent: oklch(0.5900 0.0560 80.0); /* deepened champagne for readable accents */
+  --accent-foreground: oklch(0.9917 0.0085 84.6);
   --destructive: oklch(0.505 0.16 27);
   --destructive-foreground: oklch(0.9917 0.0085 84.6);
   --border: oklch(0.8476 0.0296 77.5);
