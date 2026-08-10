@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-/** Minimal TG monogram mark for Tia Goyal. */
+/** Minimal luxury TG monogram for Tia Goyal — deep espresso on ivory with a beige accent. */
 export function Monogram({
   className,
   title = "Tia Goyal monogram",
@@ -15,25 +15,38 @@ export function Monogram({
       aria-label={title}
       className={cn("h-9 w-9", className)}
     >
-      <defs>
-        <linearGradient id="tg-mono" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="oklch(0.4 0.105 320)" />
-          <stop offset="60%" stopColor="oklch(0.7 0.115 320)" />
-          <stop offset="100%" stopColor="oklch(0.85 0.062 310)" />
-        </linearGradient>
-      </defs>
-      <rect x="1" y="1" width="46" height="46" rx="14" fill="url(#tg-mono)" />
+      <rect
+        x="0.75"
+        y="0.75"
+        width="46.5"
+        height="46.5"
+        rx="10"
+        fill="var(--ivory)"
+        stroke="var(--beige)"
+        strokeWidth="1.5"
+      />
+      <rect
+        x="5.5"
+        y="5.5"
+        width="37"
+        height="37"
+        rx="7"
+        fill="none"
+        stroke="var(--taupe)"
+        strokeOpacity="0.45"
+        strokeWidth="0.75"
+      />
       <path
-        d="M12 17h13M18.5 17v15"
-        stroke="white"
-        strokeWidth="2.6"
+        d="M13 18.5h11.5M18.75 18.5v11"
+        stroke="var(--espresso)"
+        strokeWidth="1.9"
         strokeLinecap="round"
       />
       <path
-        d="M36 20.5a6.6 6.6 0 1 0 .6 6.4h-4.2"
+        d="M34.6 21.2a5.6 5.6 0 1 0 .5 5.6h-3.4"
         fill="none"
-        stroke="white"
-        strokeWidth="2.6"
+        stroke="var(--espresso)"
+        strokeWidth="1.9"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
