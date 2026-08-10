@@ -19,9 +19,9 @@ const variants = {
 };
 
 export type CtaProps = {
-  variant?: keyof typeof variants;
-  size?: keyof typeof sizes;
-  className?: string;
+  variant?: keyof typeof variants | undefined;
+  size?: keyof typeof sizes | undefined;
+  className?: string | undefined;
 };
 
 export function ctaClasses({
