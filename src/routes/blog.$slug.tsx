@@ -1,11 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft } from "lucide-react";
-import { blogPosts, site } from "@/data/site";
+import { blogPosts, site, type BlogPost } from "@/data/site";
 import { BlogCard } from "@/components/BlogCard";
 import { CTASection } from "@/components/CTASection";
 
 export const Route = createFileRoute("/blog/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { post: BlogPost } => {
     const post = blogPosts.find((p) => p.slug === params.slug);
     if (!post) throw notFound();
     return { post };
