@@ -58,7 +58,7 @@ export function NewsletterForm({
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="you@company.com"
-          className="h-11 w-full rounded-full border border-border bg-card px-4 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-mauve"
+          className="h-11 w-full rounded-full border border-border bg-card px-4 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-taupe"
         />
         <button type="submit" className={ctaClasses({ className: "shrink-0" })}>
           Subscribe

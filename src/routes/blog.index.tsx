@@ -79,7 +79,7 @@ function BlogIndex() {
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search articles"
-              className="h-11 w-full rounded-full border border-border bg-card pl-11 pr-4 text-sm transition-colors focus:border-mauve"
+              className="h-11 w-full rounded-full border border-border bg-card pl-11 pr-4 text-sm transition-colors focus:border-taupe"
             />
           </div>
           <div
@@ -96,8 +96,8 @@ function BlogIndex() {
                 className={cn(
                   "rounded-full border px-4 py-2 text-sm font-medium transition-colors",
                   category === cat
-                    ? "border-transparent bg-gradient-brand text-plum-foreground"
-                    : "border-border bg-card text-muted-foreground hover:border-mauve hover:text-primary",
+                    ? "border-transparent bg-gradient-brand text-espresso-foreground"
+                    : "border-border bg-card text-muted-foreground hover:border-taupe hover:text-primary",
                 )}
               >
                 {cat}
@@ -121,7 +121,7 @@ function BlogIndex() {
           </p>
         )}
 
-        <div className="mt-14 rounded-3xl border border-border bg-lavender p-8 md:p-10">
+        <div className="mt-14 rounded-3xl border border-border bg-ivory p-8 md:p-10">
           <h2 className="text-2xl font-bold">Get new articles by email</h2>
           <p className="mt-2 max-w-xl text-sm text-muted-foreground">
             One practical email a month on SEO, AI and digital marketing.

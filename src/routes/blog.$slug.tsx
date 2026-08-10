@@ -146,7 +146,7 @@ function Article() {
               </section>
             ))}
 
-            <div className="mt-12 rounded-2xl border border-border bg-lavender p-6">
+            <div className="mt-12 rounded-2xl border border-border bg-ivory p-6">
               <h2 className="text-lg font-bold">Want this done for you?</h2>
               <p className="mt-2 text-sm text-muted-foreground">
                 I help businesses put ideas like these into practice.{" "}

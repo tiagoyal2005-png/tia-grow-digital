@@ -4,7 +4,7 @@ import { services, site } from "@/data/site";
 import { ctaClasses } from "@/components/CTAButtons";
 
 const fieldClass =
-  "mt-2 w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-mauve";
+  "mt-2 w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-taupe";
 
 /** Accessible contact form. Wire to a server function/Brevo when ready. */
 export function ContactForm() {
