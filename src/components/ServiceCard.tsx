@@ -45,15 +45,26 @@ export function ServiceCard({
       ) : null}
 
       <div className="mt-auto pt-6">
-        <Link
-          to={detailed ? "/book-a-call" : "/services"}
-          hash={detailed ? undefined : service.slug}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-3"
-        >
-          {detailed ? "Discuss this service" : "Learn more"}
-          <ArrowRight className="h-4 w-4" aria-hidden="true" />
-        </Link>
+        {detailed ? (
+          <Link
+            to="/book-a-call"
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-3"
+          >
+            Discuss this service
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        ) : (
+          <Link
+            to="/services"
+            hash={service.slug}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-3"
+          >
+            Learn more
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        )}
       </div>
+
     </article>
   );
 }
