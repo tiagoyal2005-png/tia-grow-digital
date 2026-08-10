@@ -112,7 +112,7 @@
   --sidebar-ring: oklch(0.7425 0.0266 69.3);
 
   /* Expressive tokens — very subtle tonal transitions */
-  --gradient-brand: linear-gradient(135deg, var(--espresso) 0%, oklch(0.36 0.016 60) 65%, var(--mocha) 100%);
+  --gradient-brand: linear-gradient(135deg, oklch(0.44 0.022 60) 0%, var(--mocha) 100%);
   --gradient-soft: linear-gradient(160deg, var(--ivory) 0%, oklch(0.952 0.014 81) 100%);
   --gradient-text: linear-gradient(100deg, var(--espresso) 0%, var(--mocha) 60%, var(--espresso) 100%);
   --shadow-soft: 0 1px 2px oklch(0.2861 0.0114 55.9 / 0.04), 0 12px 32px -18px oklch(0.2861 0.0114 55.9 / 0.16);
