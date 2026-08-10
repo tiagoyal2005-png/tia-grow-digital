@@ -38,11 +38,13 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --color-plum: var(--plum);
-  --color-plum-foreground: var(--plum-foreground);
-  --color-mauve: var(--mauve);
-  --color-lilac: var(--lilac);
-  --color-lavender: var(--lavender);
+  --color-espresso: var(--espresso);
+  --color-espresso-foreground: var(--espresso-foreground);
+  --color-taupe: var(--taupe);
+  --color-beige: var(--beige);
+  --color-ivory: var(--ivory);
+  --color-mocha: var(--mocha);
+  --color-sage: var(--sage);
   --color-surface: var(--surface);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
