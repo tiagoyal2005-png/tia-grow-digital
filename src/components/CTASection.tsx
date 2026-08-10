@@ -13,14 +13,14 @@ export function CTASection({
   return (
     <section className="container-page pb-20 pt-4 md:pb-28">
       <Reveal>
-        <div className="relative overflow-hidden rounded-3xl bg-gradient-brand px-6 py-14 text-plum-foreground shadow-glow sm:px-12 md:py-20">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-brand px-6 py-14 text-espresso-foreground shadow-glow sm:px-12 md:py-20">
           <div
             aria-hidden="true"
-            className="float-slower pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-lilac/30 blur-2xl"
+            className="float-slower pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-beige/30 blur-2xl"
           />
           <div
             aria-hidden="true"
-            className="float-slow pointer-events-none absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-lavender/20 blur-3xl"
+            className="float-slow pointer-events-none absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-ivory/20 blur-3xl"
           />
           <div className="relative max-w-2xl">
             <h2 className="text-3xl font-bold sm:text-4xl md:text-5xl">{title}</h2>

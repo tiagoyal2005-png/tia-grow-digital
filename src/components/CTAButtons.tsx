@@ -12,9 +12,9 @@ const sizes = {
 
 const variants = {
   primary:
-    "bg-gradient-brand text-plum-foreground shadow-soft hover:shadow-glow hover:-translate-y-0.5",
+    "bg-gradient-brand text-espresso-foreground shadow-soft hover:shadow-glow hover:-translate-y-0.5",
   outline:
-    "border border-border bg-card text-foreground hover:border-mauve hover:text-primary hover:-translate-y-0.5",
+    "border border-border bg-card text-foreground hover:border-taupe hover:text-primary hover:-translate-y-0.5",
   ghost: "text-primary hover:text-accent",
 };
 

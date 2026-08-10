@@ -71,7 +71,7 @@ function Resources() {
 
         <div
           id="resource-signup"
-          className="mt-14 rounded-3xl border border-border bg-lavender p-8 md:p-12"
+          className="mt-14 rounded-3xl border border-border bg-ivory p-8 md:p-12"
         >
           <h2 className="text-2xl font-bold sm:text-3xl">
             Get the Free SEO Checklist

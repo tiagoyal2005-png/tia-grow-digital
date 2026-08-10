@@ -139,7 +139,7 @@ function About() {
         </div>
       </section>
 
-      <section className="bg-lavender" aria-labelledby="values">
+      <section className="bg-ivory" aria-labelledby="values">
         <div className="container-page section-y">
           <Reveal>
             <span className="eyebrow">What you can expect</span>

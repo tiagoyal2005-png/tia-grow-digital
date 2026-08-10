@@ -68,11 +68,11 @@ function Home() {
       <section className="relative overflow-hidden bg-gradient-soft">
         <div
           aria-hidden="true"
-          className="float-slower pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-lilac/40 blur-3xl"
+          className="float-slower pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-beige/40 blur-3xl"
         />
         <div
           aria-hidden="true"
-          className="float-slow pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-mauve/20 blur-3xl"
+          className="float-slow pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-taupe/20 blur-3xl"
         />
         <div className="container-page relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-2 lg:py-28">
           <div>
@@ -168,7 +168,7 @@ function Home() {
       </section>
 
       {/* Services */}
-      <section className="bg-lavender" aria-labelledby="home-services">
+      <section className="bg-ivory" aria-labelledby="home-services">
         <div className="container-page section-y">
           <Reveal>
             <span className="eyebrow">Services</span>
@@ -187,7 +187,7 @@ function Home() {
               </Reveal>
             ))}
             <Reveal delay={160}>
-              <div className="card-premium flex h-full flex-col justify-center bg-gradient-brand p-7 text-plum-foreground">
+              <div className="card-premium flex h-full flex-col justify-center bg-gradient-brand p-7 text-espresso-foreground">
                 <h3 className="text-xl font-bold">Not sure where to start?</h3>
                 <p className="mt-3 text-sm leading-relaxed opacity-90">
                   Tell me your goal on a free call and I'll recommend the
@@ -238,7 +238,7 @@ function Home() {
       </section>
 
       {/* Process */}
-      <section className="bg-lavender" aria-labelledby="process">
+      <section className="bg-ivory" aria-labelledby="process">
         <div className="container-page section-y">
           <Reveal>
             <span className="eyebrow">The process</span>
@@ -306,7 +306,7 @@ function Home() {
               {tools.map((tool, i) => (
                 <Reveal as="li" key={tool.name} delay={i * 80}>
                   <div className="card-premium flex items-start gap-4 p-5">
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-sm font-bold text-plum-foreground">
+                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-sm font-bold text-espresso-foreground">
                       {tool.name.slice(0, 2)}
                     </span>
                     <div>
@@ -384,7 +384,7 @@ function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-lavender" aria-labelledby="home-faq">
+      <section className="bg-ivory" aria-labelledby="home-faq">
         <div className="container-page section-y">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <Reveal>

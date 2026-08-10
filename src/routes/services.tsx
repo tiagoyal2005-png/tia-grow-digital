@@ -72,7 +72,7 @@ function Services() {
                   key={s.slug}
                   to="/services"
                   hash={s.slug}
-                  className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-mauve hover:text-primary"
+                  className="rounded-full border border-border bg-card px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:border-taupe hover:text-primary"
                 >
                   {s.title}
                 </Link>
@@ -92,7 +92,7 @@ function Services() {
         </div>
       </section>
 
-      <section className="bg-lavender" aria-labelledby="services-process">
+      <section className="bg-ivory" aria-labelledby="services-process">
         <div className="container-page section-y">
           <Reveal>
             <span className="eyebrow">How we'll work</span>

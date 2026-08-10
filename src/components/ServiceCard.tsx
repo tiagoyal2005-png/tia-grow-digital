@@ -16,7 +16,7 @@ export function ServiceCard({
       id={detailed ? service.slug : undefined}
       className="card-premium group flex h-full flex-col p-6 sm:p-7"
     >
-      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-brand text-plum-foreground shadow-soft transition-transform duration-300 group-hover:scale-110">
+      <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-brand text-espresso-foreground shadow-soft transition-transform duration-300 group-hover:scale-110">
         <Icon className="h-6 w-6" aria-hidden="true" />
       </span>
       <h3 className="mt-5 text-xl font-bold">{service.title}</h3>
