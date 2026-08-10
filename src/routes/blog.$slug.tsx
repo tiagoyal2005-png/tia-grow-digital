@@ -89,7 +89,7 @@ function ArticleNotFound() {
 }
 
 function Article() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: BlogPost };
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
