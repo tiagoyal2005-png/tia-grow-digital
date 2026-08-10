@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 /**
  * Minimal editorial TG monogram for Tia Goyal.
- * Deep espresso letterforms on ivory, with a fine beige frame and a champagne hairline accent.
+ * Deep espresso letterforms on ivory, with a fine beige frame and a warm taupe hairline accent.
  */
 export function Monogram({
   className,
@@ -47,7 +47,7 @@ export function Monogram({
       {/* champagne hairline accent */}
       <path
         d="M12.5 35.4h23"
-        stroke="var(--champagne)"
+        stroke="var(--taupe)"
         strokeWidth="1"
         strokeLinecap="round"
       />
