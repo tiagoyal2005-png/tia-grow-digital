@@ -1,117 +1,86 @@
-import { useState, type FormEvent } from "react";
+import { useState } from "react";
 import { toast } from "sonner";
-import { services, site } from "@/data/site";
-import { ctaClasses } from "@/components/CTAButtons";
 
-const fieldClass =
-  "mt-2 w-full rounded-xl border border-border bg-card px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground transition-colors focus:border-taupe";
+const topics = [
+  "Choosing a saree",
+  "An existing order",
+  "Made to order & bridal",
+  "Care & repair",
+  "Wholesale or press",
+] as const;
 
-/** Accessible contact form. Wire to a server function/Brevo when ready. */
+/** Client care enquiry form. Wire to an email service when the backend is ready. */
 export function ContactForm() {
-  const [sent, setSent] = useState(false);
-
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const name = String(data.get("name") ?? "").trim();
-    const email = String(data.get("email") ?? "").trim();
-    const message = String(data.get("message") ?? "").trim();
-
-    if (!name || !email.includes("@") || message.length < 10) {
-      toast.error("Please complete all required fields.", {
-        description: "A short note about your goals helps me reply usefully.",
-      });
-      return;
-    }
-
-    setSent(true);
-    e.currentTarget.reset();
-    toast.success("Message ready to send", {
-      description: `Email delivery connects with Brevo shortly — meanwhile reach me directly at ${site.email}.`,
-    });
-  }
+  const [submitting, setSubmitting] = useState(false);
 
   return (
-    <form onSubmit={onSubmit} className="card-premium p-6 sm:p-8" noValidate>
-      <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label htmlFor="name" className="text-sm font-medium">
-            Name <span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="name"
-            name="name"
-            required
-            autoComplete="name"
-            className={fieldClass}
-            placeholder="Your name"
-          />
-        </div>
-        <div>
-          <label htmlFor="email" className="text-sm font-medium">
-            Email <span aria-hidden="true">*</span>
-          </label>
-          <input
-            id="email"
-            name="email"
-            type="email"
-            required
-            autoComplete="email"
-            className={fieldClass}
-            placeholder="you@company.com"
-          />
-        </div>
-        <div>
-          <label htmlFor="company" className="text-sm font-medium">
-            Business / Website
-          </label>
-          <input
-            id="company"
-            name="company"
-            className={fieldClass}
-            placeholder="Company or URL"
-          />
-        </div>
-        <div>
-          <label htmlFor="service" className="text-sm font-medium">
-            What do you need help with?
-          </label>
-          <select id="service" name="service" className={fieldClass} defaultValue="">
-            <option value="">Select a service</option>
-            {services.map((s) => (
-              <option key={s.slug} value={s.slug}>
-                {s.title}
-              </option>
-            ))}
-            <option value="not-sure">Not sure yet</option>
-          </select>
-        </div>
+    <form
+      className="grid gap-6"
+      onSubmit={(e) => {
+        e.preventDefault();
+        setSubmitting(true);
+        const form = e.currentTarget;
+        window.setTimeout(() => {
+          setSubmitting(false);
+          form.reset();
+          toast.success("Message received", {
+            description: "Our client care team replies within one working day.",
+          });
+        }, 400);
+      }}
+    >
+      <div className="grid gap-6 sm:grid-cols-2">
+        <Field id="name" label="Name">
+          <input id="name" name="name" required autoComplete="name" className={inputClass} />
+        </Field>
+        <Field id="email" label="Email">
+          <input id="email" name="email" type="email" required autoComplete="email" className={inputClass} />
+        </Field>
       </div>
 
-      <div className="mt-5">
-        <label htmlFor="message" className="text-sm font-medium">
-          Tell me about your goals <span aria-hidden="true">*</span>
-        </label>
-        <textarea
-          id="message"
-          name="message"
-          required
-          rows={5}
-          className={fieldClass}
-          placeholder="Where you are now, where you want to be, and any deadlines."
-        />
-      </div>
+      <Field id="topic" label="What is this about?">
+        <select id="topic" name="topic" className={inputClass} defaultValue={topics[0]}>
+          {topics.map((t) => (
+            <option key={t} value={t}>
+              {t}
+            </option>
+          ))}
+        </select>
+      </Field>
 
-      <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center">
-        <button type="submit" className={ctaClasses({ size: "lg" })}>
-          Send message
-        </button>
-        <p aria-live="polite" className="text-xs text-muted-foreground">
-          {sent
-            ? "Thanks — I'll get back to you within one business day."
-            : "Typical reply time: within one business day."}
-        </p>
-      </div>
+      <Field id="message" label="Message">
+        <textarea id="message" name="message" required rows={5} className={inputClass} />
+      </Field>
+
+      <button
+        type="submit"
+        disabled={submitting}
+        className="justify-self-start bg-primary px-10 py-3.5 text-xs uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
+      >
+        {submitting ? "Sending…" : "Send message"}
+      </button>
     </form>
+  );
+}
+
+const inputClass =
+  "w-full border-b border-border bg-transparent py-2.5 text-sm outline-none transition-colors focus:border-foreground";
+
+function Field({
+  id,
+  label,
+  children,
+}: {
+  id: string;
+  label: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="eyebrow">
+        {label}
+      </label>
+      <div className="mt-2">{children}</div>
+    </div>
   );
 }

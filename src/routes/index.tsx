@@ -1,415 +1,327 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, CheckCircle2, Download, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-abstract.jpg";
-import {
-  blogPosts,
-  experience,
-  processSteps,
-  services,
-  site,
-  tools,
-  valueProps,
-  whyWorkWithMe,
-} from "@/data/site";
-import { BookCallButton, ExploreServicesButton, ctaClasses } from "@/components/CTAButtons";
-import { ServiceCard } from "@/components/ServiceCard";
-import { BlogCard } from "@/components/BlogCard";
+import { ArrowRight } from "lucide-react";
+import heroSaree from "@/assets/hero-saree.jpg";
+import { collections, craftJourney, images, journalPosts, products } from "@/data/catalog";
+import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
-import { CTASection } from "@/components/CTASection";
-import { PortfolioPlaceholder } from "@/components/PortfolioPlaceholder";
-import { NewsletterForm } from "@/components/NewsletterForm";
-import { FAQAccordion } from "@/components/FAQAccordion";
-import { faqs } from "@/data/site";
-
-const title = "Tia Goyal — SEO, AI & Digital Marketing Freelancer";
-const description =
-  "Freelance digital marketer and SEO specialist helping businesses build stronger digital presence, attract qualified leads and grow with SEO, AI and digital marketing.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title },
-      { name: "description", content: description },
-      { property: "og:title", content: title },
-      { property: "og:description", content: description },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      { name: "twitter:title", content: title },
-      { name: "twitter:description", content: description },
-    ],
-    links: [{ rel: "canonical", href: "/" }],
-    scripts: [
+      { title: "ACTDF — Handwoven Kota Doria Sarees from Rajasthan" },
       {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ProfessionalService",
-          name: `${site.name} — Digital Marketing`,
-          description,
-          url: `https://${site.domain}`,
-          email: site.email,
-          telephone: site.phone,
-          areaServed: "Worldwide",
-          makesOffer: services.map((s) => ({
-            "@type": "Offer",
-            itemOffered: { "@type": "Service", name: s.title },
-          })),
-        }),
+        name: "description",
+        content:
+          "Handwoven Kota Doria sarees made with weavers in Kaithoon, Rajasthan. Quiet luxury, artisan craftsmanship and modern drapes.",
+      },
+      { property: "og:title", content: "ACTDF — Handwoven Kota Doria Sarees" },
+      {
+        property: "og:description",
+        content:
+          "A heritage-led fashion house working with Kota Doria weavers to create handwoven sarees for modern life.",
       },
     ],
   }),
-  component: Home,
+  component: HomePage,
 });
 
-function Home() {
+function HomePage() {
+  const bestsellers = products.filter((p) => p.bestseller).slice(0, 4);
+  const featuredJournal = journalPosts.slice(0, 3);
+
   return (
     <>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-soft">
-        <div
-          aria-hidden="true"
-          className="float-slower pointer-events-none absolute -left-24 top-10 h-72 w-72 rounded-full bg-beige/40 blur-3xl"
+      <section className="relative min-h-[78vh] w-full overflow-hidden md:min-h-[88vh]">
+        <img
+          src={heroSaree}
+          alt="Woman wearing a cream Kota Doria saree with a maroon border in a sunlit Rajasthani courtyard"
+          width={1920}
+          height={1280}
+          fetchPriority="high"
+          decoding="async"
+          className="absolute inset-0 h-full w-full object-cover object-[70%_center]"
         />
-        <div
-          aria-hidden="true"
-          className="float-slow pointer-events-none absolute -right-20 bottom-0 h-80 w-80 rounded-full bg-taupe/20 blur-3xl"
-        />
-        <div className="container-page relative grid items-center gap-12 py-16 md:py-24 lg:grid-cols-2 lg:py-28">
-          <div>
-            <Reveal>
-              <span className="eyebrow">
-                <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
-                {site.role}
-              </span>
-            </Reveal>
-            <Reveal delay={80}>
-              <h1 className="mt-6 text-4xl font-bold leading-[1.08] sm:text-5xl lg:text-6xl">
-                Grow Your Business with{" "}
-                <span className="text-gradient">SEO, AI &amp; Digital Marketing.</span>
-              </h1>
-            </Reveal>
-            <Reveal delay={160}>
-              <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-                Helping businesses build stronger digital presence, attract
-                qualified leads, and turn online visibility into meaningful
-                growth.
-              </p>
-            </Reveal>
-            <Reveal delay={240}>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <BookCallButton size="lg" />
-                <ExploreServicesButton size="lg" />
-              </div>
-            </Reveal>
-            <Reveal delay={320}>
-              <ul className="mt-10 grid gap-3 sm:grid-cols-3">
-                {["SEO & Search Visibility", "AI-Powered Workflows", "Qualified Lead Generation"].map(
-                  (item) => (
-                    <li
-                      key={item}
-                      className="flex items-start gap-2 text-sm font-medium text-foreground"
-                    >
-                      <CheckCircle2
-                        className="mt-0.5 h-4 w-4 shrink-0 text-accent"
-                        aria-hidden="true"
-                      />
-                      {item}
-                    </li>
-                  ),
-                )}
-              </ul>
-            </Reveal>
-          </div>
-
-          <Reveal delay={120} className="relative">
-            <div className="relative mx-auto max-w-lg">
-              <img
-                src={heroImage}
-                width={1200}
-                height={1200}
-                alt="Abstract illustration of search visibility, data growth and AI-driven digital marketing"
-                fetchPriority="high"
-                decoding="async"
-                className="w-full rounded-3xl shadow-lift"
-              />
-              <div className="float-slow absolute -bottom-6 -left-4 rounded-2xl border border-border bg-card p-4 shadow-lift sm:-left-8">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-                  Focus areas
-                </p>
-                <p className="mt-1 text-sm font-semibold">
-                  SEO · AI Automation · Lead Gen
-                </p>
-              </div>
+        <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/70 to-transparent" />
+        <div className="container-page relative flex min-h-[78vh] items-center py-20 md:min-h-[88vh]">
+          <div className="max-w-xl">
+            <p className="eyebrow">Kota Doria · Kaithoon, Rajasthan</p>
+            <h1 className="display mt-6 text-[2.75rem] sm:text-6xl lg:text-7xl">
+              Woven slowly,
+              <br />
+              worn for years
+            </h1>
+            <p className="mt-7 max-w-md text-base text-muted-foreground">
+              Handwoven Kota Doria sarees made with weaving families in Kaithoon —
+              light enough for daily wear, considered enough for the evenings that
+              matter.
+            </p>
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/shop"
+                className="inline-flex items-center justify-center bg-primary px-10 py-4 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Shop sarees
+              </Link>
+              <Link
+                to="/heritage"
+                className="inline-flex items-center justify-center border border-foreground/25 px-10 py-4 text-xs uppercase tracking-[0.22em] transition-colors hover:border-foreground"
+              >
+                Explore our heritage
+              </Link>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
-      {/* Value proposition */}
-      <section className="container-page section-y" aria-labelledby="value-prop">
-        <Reveal>
-          <span className="eyebrow">Why this works</span>
-          <h2 id="value-prop" className="mt-4 max-w-2xl text-3xl font-bold sm:text-4xl">
-            Marketing that's built around outcomes, not activity
-          </h2>
+      {/* Bestsellers */}
+      <section className="container-page section-y" aria-labelledby="bestsellers">
+        <Reveal className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">Most worn</p>
+            <h2 id="bestsellers" className="display mt-4 text-4xl md:text-5xl">
+              Bestselling sarees
+            </h2>
+          </div>
+          <Link to="/shop" className="link-underline text-xs uppercase tracking-[0.2em]">
+            View all
+          </Link>
         </Reveal>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {valueProps.map((v, i) => (
-            <Reveal key={v.title} delay={i * 90}>
-              <div className="card-premium h-full p-6">
-                <h3 className="text-lg font-bold">{v.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {v.body}
-                </p>
-              </div>
+        <div className="mt-14 grid gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
+          {bestsellers.map((product, i) => (
+            <Reveal key={product.slug} delay={i * 90}>
+              <ProductCard product={product} />
             </Reveal>
           ))}
         </div>
       </section>
 
-      {/* Services */}
-      <section className="bg-ivory" aria-labelledby="home-services">
+      {/* Heritage story — alternating */}
+      <section aria-labelledby="heritage-story" className="border-t border-border">
+        <h2 id="heritage-story" className="sr-only">
+          The heritage of Kota Doria
+        </h2>
+        <StoryRow
+          image={images.craftWeaveDetail}
+          alt="Macro detail of the square khat weave with gold zari thread"
+          eyebrow="The weave"
+          title="Fourteen threads make one square"
+          body="Kota Doria is defined by its khat — eight cotton threads and six of silk, repeated across six metres of fabric. Hold it to the light and the squares drift a fraction. That drift is the hand."
+          to="/craft"
+          cta="See the process"
+        />
+        <StoryRow
+          reverse
+          image={images.craftLoom}
+          alt="A weaver's hands working fine thread on a wooden pit loom"
+          eyebrow="The weavers"
+          title="Bought from the loom, not the market"
+          body="We work directly with weaving households in Kaithoon rather than through traders, and we agree the rate per saree before the warp is laid."
+          to="/heritage"
+          cta="Our heritage"
+        />
+        <StoryRow
+          image={images.heritageVillage}
+          alt="Wooden looms and hanging dyed thread in a Kota workshop"
+          eyebrow="Now"
+          title="An old weave, reinterpreted"
+          body="Widened pallu bands, muted grounds, gold reduced to a hairline. The technique is unchanged; the proportion is not."
+          to="/collections"
+          cta="Browse collections"
+        />
+      </section>
+
+      {/* Craft journey */}
+      <section className="border-t border-border bg-card" aria-labelledby="journey">
         <div className="container-page section-y">
           <Reveal>
-            <span className="eyebrow">Services</span>
-            <h2 id="home-services" className="mt-4 max-w-2xl text-3xl font-bold sm:text-4xl">
-              Seven ways I help businesses grow online
+            <p className="eyebrow">Thread → Weave → Craft → Finish → You</p>
+            <h2 id="journey" className="display mt-4 max-w-2xl text-4xl md:text-5xl">
+              How a saree reaches you
             </h2>
-            <p className="mt-4 max-w-2xl text-base text-muted-foreground">
-              Start with one focus area or combine several into a complete
-              growth system.
-            </p>
           </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {services.map((s, i) => (
-              <Reveal key={s.slug} delay={(i % 3) * 80}>
-                <ServiceCard service={s} />
-              </Reveal>
-            ))}
-            <Reveal delay={160}>
-              <div className="card-premium flex h-full flex-col justify-center bg-gradient-brand p-7 text-espresso-foreground">
-                <h3 className="text-xl font-bold">Not sure where to start?</h3>
-                <p className="mt-3 text-sm leading-relaxed opacity-90">
-                  Tell me your goal on a free call and I'll recommend the
-                  shortest route to it.
+          <ol className="mt-14 grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
+            {craftJourney.map((stage, i) => (
+              <Reveal as="li" key={stage.step} delay={i * 80}>
+                <div className="hover-zoom aspect-[4/5] overflow-hidden bg-muted">
+                  <img
+                    src={stage.image}
+                    alt={stage.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <p className="mt-5 text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                  {String(i + 1).padStart(2, "0")} · {stage.step}
                 </p>
-                <Link
-                  to="/book-a-call"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold transition-all hover:gap-3"
-                >
-                  Book a Free Discovery Call
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Why work with me */}
-      <section className="container-page section-y" aria-labelledby="why-me">
-        <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <Reveal>
-            <span className="eyebrow">Why work with me</span>
-            <h2 id="why-me" className="mt-4 text-3xl font-bold sm:text-4xl">
-              A freelance partner who thinks like your growth lead
-            </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-              You get senior attention, clear scope and honest reporting —
-              without agency overheads or handovers.
-            </p>
-            <div className="mt-8">
-              <BookCallButton />
-            </div>
-          </Reveal>
-          <div className="grid gap-5 sm:grid-cols-2">
-            {whyWorkWithMe.map((item, i) => (
-              <Reveal key={item.title} delay={i * 80}>
-                <div className="card-premium h-full p-6">
-                  <h3 className="text-base font-bold">{item.title}</h3>
-                  <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
-                    {item.body}
-                  </p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section className="bg-ivory" aria-labelledby="process">
-        <div className="container-page section-y">
-          <Reveal>
-            <span className="eyebrow">The process</span>
-            <h2 id="process" className="mt-4 max-w-2xl text-3xl font-bold sm:text-4xl">
-              Five steps from first call to compounding growth
-            </h2>
-          </Reveal>
-          <ol className="mt-12 grid gap-6 md:grid-cols-5">
-            {processSteps.map((step, i) => (
-              <Reveal as="li" key={step.step} delay={i * 80}>
-                <div className="relative h-full rounded-2xl border border-border bg-card p-6 shadow-soft">
-                  <span className="text-sm font-bold tracking-[0.18em] text-accent">
-                    {step.step}
-                  </span>
-                  <h3 className="mt-3 text-base font-bold">{step.title}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {step.body}
-                  </p>
-                </div>
+                <h3 className="mt-2 font-serif text-xl font-light">{stage.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{stage.body}</p>
               </Reveal>
             ))}
           </ol>
         </div>
       </section>
 
-      {/* Experience + tools */}
-      <section className="container-page section-y" aria-labelledby="experience">
-        <div className="grid gap-12 lg:grid-cols-2">
-          <div>
-            <Reveal>
-              <span className="eyebrow">Experience</span>
-              <h2 id="experience" className="mt-4 text-3xl font-bold sm:text-4xl">
-                Where I've built my craft
-              </h2>
-            </Reveal>
-            <ol className="mt-8 space-y-6 border-l border-border pl-6">
-              {experience.map((item, i) => (
-                <Reveal as="li" key={item.org} delay={i * 90} className="relative">
-                  <span
-                    aria-hidden="true"
-                    className="absolute -left-[31px] top-1.5 h-3 w-3 rounded-full bg-gradient-brand"
+      {/* Collections */}
+      <section className="container-page section-y" aria-labelledby="collections-home">
+        <Reveal>
+          <p className="eyebrow">Five lines</p>
+          <h2 id="collections-home" className="display mt-4 text-4xl md:text-5xl">
+            The collections
+          </h2>
+        </Reveal>
+        <div className="mt-14 grid gap-10 md:grid-cols-3">
+          {collections.slice(0, 3).map((collection, i) => (
+            <Reveal key={collection.slug} delay={i * 90}>
+              <Link
+                to="/collections/$slug"
+                params={{ slug: collection.slug }}
+                className="hover-zoom group block"
+              >
+                <div className="aspect-[4/5] overflow-hidden bg-muted">
+                  <img
+                    src={collection.image}
+                    alt={collection.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
                   />
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">
-                    {item.period}
-                  </p>
-                  <h3 className="mt-1.5 text-lg font-bold">
-                    {item.role} · {item.org}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    {item.body}
-                  </p>
-                </Reveal>
-              ))}
-            </ol>
-          </div>
-
-          <div>
-            <Reveal>
-              <span className="eyebrow">Tools I work with</span>
-              <h2 className="mt-4 text-3xl font-bold sm:text-4xl">
-                A lean, practical stack
-              </h2>
-            </Reveal>
-            <ul className="mt-8 space-y-4">
-              {tools.map((tool, i) => (
-                <Reveal as="li" key={tool.name} delay={i * 80}>
-                  <div className="card-premium flex items-start gap-4 p-5">
-                    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-brand text-sm font-bold text-espresso-foreground">
-                      {tool.name.slice(0, 2)}
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold">{tool.name}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">
-                        {tool.use}
-                      </p>
-                    </div>
-                  </div>
-                </Reveal>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <PortfolioPlaceholder />
-
-      {/* Lead magnet */}
-      <section className="container-page pb-4" aria-labelledby="lead-magnet">
-        <Reveal>
-          <div className="card-premium grid gap-8 p-8 md:grid-cols-[1.2fr_1fr] md:p-12">
-            <div>
-              <span className="eyebrow">
-                <Download className="h-3.5 w-3.5" aria-hidden="true" /> Free resource
-              </span>
-              <h2 id="lead-magnet" className="mt-4 text-2xl font-bold sm:text-3xl">
-                Get the Free SEO Checklist
-              </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
-                A 25-point checklist covering technical setup, on-page
-                fundamentals, content and tracking — the exact list I run on
-                every new website. Delivered straight to your inbox.
-              </p>
-              <div className="mt-6">
-                <Link to="/resources" className={ctaClasses({ variant: "outline" })}>
-                  See all free resources
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </Link>
-              </div>
-            </div>
-            <div className="self-center">
-              <NewsletterForm />
-            </div>
-          </div>
-        </Reveal>
-      </section>
-
-      {/* Blog */}
-      <section className="container-page section-y" aria-labelledby="home-blog">
-        <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <div>
-              <span className="eyebrow">From the blog</span>
-              <h2 id="home-blog" className="mt-4 text-3xl font-bold sm:text-4xl">
-                Ideas you can act on this week
-              </h2>
-            </div>
-            <Link
-              to="/blog"
-              className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-all hover:gap-3"
-            >
-              View all articles
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-        </Reveal>
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {blogPosts.map((post, i) => (
-            <Reveal key={post.slug} delay={i * 90}>
-              <BlogCard post={post} />
+                </div>
+                <h3 className="mt-6 font-serif text-2xl font-light">{collection.name}</h3>
+                <p className="mt-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  {collection.subtitle}
+                </p>
+              </Link>
             </Reveal>
           ))}
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="bg-ivory" aria-labelledby="home-faq">
-        <div className="container-page section-y">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-            <Reveal>
-              <span className="eyebrow">FAQ</span>
-              <h2 id="home-faq" className="mt-4 text-3xl font-bold sm:text-4xl">
-                Questions clients ask first
-              </h2>
-              <p className="mt-4 text-sm text-muted-foreground">
-                Still curious?{" "}
-                <Link to="/faq" className="font-semibold text-primary underline-offset-4 hover:underline">
-                  Read the full FAQ
-                </Link>
-                .
-              </p>
-            </Reveal>
-            <Reveal delay={100}>
-              <FAQAccordion items={faqs.slice(0, 5)} />
-            </Reveal>
-          </div>
+      {/* Editorial statement */}
+      <section className="border-y border-border bg-card">
+        <div className="container-page section-y text-center">
+          <Reveal>
+            <p className="mx-auto max-w-3xl font-serif text-3xl font-light leading-snug md:text-[2.6rem]">
+              &ldquo;We are not preserving a craft. We are paying for it properly,
+              which is the only thing that has ever preserved one.&rdquo;
+            </p>
+            <p className="mt-8 text-xs uppercase tracking-[0.22em] text-muted-foreground">
+              The ACTDF studio, Kota
+            </p>
+          </Reveal>
         </div>
       </section>
 
-      <div className="pt-16 md:pt-24">
-        <CTASection />
-      </div>
+      {/* Journal */}
+      <section className="container-page section-y" aria-labelledby="journal-home">
+        <Reveal className="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">Journal</p>
+            <h2 id="journal-home" className="display mt-4 text-4xl md:text-5xl">
+              Notes from the loom
+            </h2>
+          </div>
+          <Link to="/journal" className="link-underline text-xs uppercase tracking-[0.2em]">
+            All stories
+          </Link>
+        </Reveal>
+        <div className="mt-14 grid gap-10 md:grid-cols-3">
+          {featuredJournal.map((post, i) => (
+            <Reveal key={post.slug} delay={i * 90}>
+              <Link
+                to="/journal/$slug"
+                params={{ slug: post.slug }}
+                className="hover-zoom block"
+              >
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={post.image}
+                    alt={post.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <p className="mt-5 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                  {post.category}
+                </p>
+                <h3 className="mt-2 font-serif text-2xl font-light">{post.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground">{post.excerpt}</p>
+              </Link>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Closing CTA */}
+      <section className="border-t border-border">
+        <div className="container-page section-y text-center">
+          <Reveal>
+            <h2 className="display mx-auto max-w-2xl text-4xl md:text-5xl">
+              Find the saree you will keep
+            </h2>
+            <p className="mx-auto mt-6 max-w-lg text-sm text-muted-foreground">
+              Every piece is handwoven in limited numbers. When a weave sells out,
+              it takes weeks to return.
+            </p>
+            <Link
+              to="/shop"
+              className="mt-10 inline-flex items-center gap-3 bg-primary px-12 py-4 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90"
+            >
+              Shop sarees
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
     </>
+  );
+}
+
+function StoryRow({
+  image,
+  alt,
+  eyebrow,
+  title,
+  body,
+  to,
+  cta,
+  reverse = false,
+}: {
+  image: string;
+  alt: string;
+  eyebrow: string;
+  title: string;
+  body: string;
+  to: "/craft" | "/heritage" | "/collections";
+  cta: string;
+  reverse?: boolean;
+}) {
+  return (
+    <div className="grid items-stretch md:grid-cols-2">
+      <div className={`hover-zoom aspect-[4/3] overflow-hidden bg-muted md:aspect-auto md:min-h-[32rem] ${reverse ? "md:order-2" : ""}`}>
+        <img
+          src={image}
+          alt={alt}
+          loading="lazy"
+          decoding="async"
+          className="h-full w-full object-cover"
+        />
+      </div>
+      <div className="flex items-center px-5 py-16 md:px-16">
+        <Reveal className="max-w-md">
+          <p className="eyebrow">{eyebrow}</p>
+          <h3 className="display mt-4 text-3xl md:text-4xl">{title}</h3>
+          <p className="mt-6 text-sm leading-relaxed text-muted-foreground">{body}</p>
+          <Link
+            to={to}
+            className="link-underline mt-8 inline-block text-xs uppercase tracking-[0.2em]"
+          >
+            {cta}
+          </Link>
+        </Reveal>
+      </div>
+    </div>
   );
 }
