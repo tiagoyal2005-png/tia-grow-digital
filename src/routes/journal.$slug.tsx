@@ -27,7 +27,7 @@ export const Route = createFileRoute("/journal/$slug")({
 });
 
 function JournalArticle() {
-  const { post } = Route.useLoaderData();
+  const { post } = Route.useLoaderData() as { post: JournalPost };
   const more = journalPosts.filter((p) => p.slug !== post.slug).slice(0, 3);
 
   return (
