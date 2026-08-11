@@ -1,99 +1,108 @@
+import { useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Mail, MessageCircle } from "lucide-react";
-import { navLinks, services, site } from "@/data/site";
-import { Monogram } from "@/components/Monogram";
-import { NewsletterForm } from "@/components/NewsletterForm";
+import { toast } from "sonner";
+import { site, policies } from "@/data/site";
+import { collections } from "@/data/catalog";
+import { Wordmark } from "@/components/Wordmark";
 
 export function Footer() {
-  const year = new Date().getFullYear();
+  const [email, setEmail] = useState("");
 
   return (
-    <footer className="border-t border-border bg-ivory">
-      <div className="container-page grid gap-12 py-14 md:grid-cols-2 lg:grid-cols-4 lg:py-16">
-        <div className="lg:col-span-1">
-          <Link to="/" className="flex items-center gap-2.5">
-            <Monogram />
-            <span className="text-lg font-bold tracking-tight">
-              {site.name}
-            </span>
-          </Link>
-          <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">
-            {site.statement}
+    <footer className="border-t border-border bg-card">
+      <div className="container-page grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4 lg:py-20">
+        <div>
+          <Wordmark />
+          <p className="mt-6 max-w-xs text-sm text-muted-foreground">{site.statement}</p>
+          <p className="mt-5 text-xs uppercase tracking-[0.16em] text-muted-foreground">
+            {site.address}
           </p>
-          <div className="mt-5 flex flex-col gap-2 text-sm">
-            <a
-              href={`mailto:${site.email}`}
-              className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
-            >
-              <Mail className="h-4 w-4" aria-hidden="true" />
-              {site.email}
-            </a>
-            <a
-              href={site.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-muted-foreground transition-colors hover:text-primary"
-            >
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              WhatsApp {site.phoneDisplay}
-            </a>
-          </div>
         </div>
 
-        <nav aria-label="Footer pages">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-            Explore
-          </h2>
-          <ul className="mt-4 space-y-2.5 text-sm">
-            {navLinks.map((l) => (
-              <li key={l.to}>
+        <nav aria-label="Shop" className="text-sm">
+          <h2 className="eyebrow">Shop</h2>
+          <ul className="mt-5 space-y-3">
+            <li>
+              <Link to="/shop" className="link-underline text-muted-foreground hover:text-foreground">
+                All sarees
+              </Link>
+            </li>
+            {collections.map((c) => (
+              <li key={c.slug}>
                 <Link
-                  to={l.to}
-                  className="text-muted-foreground transition-colors hover:text-primary"
+                  to="/collections/$slug"
+                  params={{ slug: c.slug }}
+                  className="link-underline text-muted-foreground hover:text-foreground"
                 >
-                  {l.label}
+                  {c.name} — {c.subtitle}
                 </Link>
               </li>
             ))}
+          </ul>
+        </nav>
+
+        <nav aria-label="House" className="text-sm">
+          <h2 className="eyebrow">The house</h2>
+          <ul className="mt-5 space-y-3">
             <li>
-              <Link
-                to="/book-a-call"
-                className="text-muted-foreground transition-colors hover:text-primary"
-              >
-                Book a Call
+              <Link to="/heritage" className="link-underline text-muted-foreground hover:text-foreground">
+                Our heritage
+              </Link>
+            </li>
+            <li>
+              <Link to="/craft" className="link-underline text-muted-foreground hover:text-foreground">
+                Craft &amp; process
+              </Link>
+            </li>
+            <li>
+              <Link to="/journal" className="link-underline text-muted-foreground hover:text-foreground">
+                Journal
+              </Link>
+            </li>
+            <li>
+              <Link to="/contact" className="link-underline text-muted-foreground hover:text-foreground">
+                Contact &amp; care
+              </Link>
+            </li>
+            <li>
+              <Link to="/account" className="link-underline text-muted-foreground hover:text-foreground">
+                Account &amp; orders
               </Link>
             </li>
           </ul>
         </nav>
 
-        <nav aria-label="Footer services">
-          <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-            Services
-          </h2>
-          <ul className="mt-4 space-y-2.5 text-sm">
-            {services.map((s) => (
-              <li key={s.slug}>
-                <Link
-                  to="/services"
-                  hash={s.slug}
-                  className="text-muted-foreground transition-colors hover:text-primary"
-                >
-                  {s.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
         <div>
-          <h2 className="text-sm font-semibold uppercase tracking-[0.14em] text-primary">
-            Newsletter
-          </h2>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            Practical SEO, AI and marketing notes. No spam, unsubscribe anytime.
+          <h2 className="eyebrow">Letters from the loom</h2>
+          <p className="mt-5 text-sm text-muted-foreground">
+            New weaves, artisan notes and collection previews. Sent occasionally.
           </p>
-          <NewsletterForm className="mt-4" compact />
-          <ul className="mt-6 space-y-1.5 text-xs text-muted-foreground">
+          <form
+            className="mt-5 flex border-b border-foreground/25 pb-2"
+            onSubmit={(e) => {
+              e.preventDefault();
+              if (!email) return;
+              setEmail("");
+              toast.success("Thank you — you're on the list.");
+            }}
+          >
+            <label htmlFor="footer-email" className="sr-only">
+              Email address
+            </label>
+            <input
+              id="footer-email"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email address"
+              className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+            />
+            <button type="submit" className="text-xs uppercase tracking-[0.2em] hover:text-primary">
+              Join
+            </button>
+          </form>
+          <ul className="mt-7 space-y-2 text-xs text-muted-foreground">
             {site.socials.map((s) => (
               <li key={s.label}>{s.label}</li>
             ))}
@@ -102,12 +111,27 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="container-page flex flex-col gap-2 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <ul className="container-page grid gap-6 py-10 sm:grid-cols-2 lg:grid-cols-4">
+          {policies.map((p) => (
+            <li key={p.title}>
+              <h3 className="text-xs uppercase tracking-[0.18em]">{p.title}</h3>
+              <p className="mt-2 text-xs text-muted-foreground">{p.body}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="border-t border-border">
+        <div className="container-page flex flex-col gap-3 py-6 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>© {new Date().getFullYear()} {site.name}. Handwoven in Kota, Rajasthan.</p>
           <p>
-            © {year} {site.name}. All rights reserved.
-          </p>
-          <p>
-            {site.role} · {site.domain}
+            <a href={`mailto:${site.email}`} className="link-underline">
+              {site.email}
+            </a>
+            <span className="px-2">·</span>
+            <a href={`tel:${site.phone}`} className="link-underline">
+              {site.phoneDisplay}
+            </a>
           </p>
         </div>
       </div>
