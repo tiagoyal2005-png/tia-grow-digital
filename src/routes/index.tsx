@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import heroSaree from "@/assets/hero-saree.jpg";
-import { collections, craftJourney, images, journalPosts, products } from "@/data/catalog";
+import { collections, craftJourney, images, journalPosts, products, reviews } from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
+import { StarRating } from "@/components/StarRating";
 import { Reveal } from "@/components/Reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
