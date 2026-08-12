@@ -87,7 +87,7 @@ export function Navbar() {
             type="button"
             className={iconBtn}
             aria-expanded={searchOpen}
-            aria-label="Search sarees"
+            aria-label="Search sarees and suits"
             onClick={() => setSearchOpen((v) => !v)}
           >
             <Search className="h-[18px] w-[18px]" aria-hidden="true" />
@@ -112,7 +112,7 @@ export function Navbar() {
             className="container-page flex items-center gap-4 py-5"
             onSubmit={(e) => {
               e.preventDefault();
-              navigate({ to: "/shop", search: { q: term || undefined } });
+              navigate({ to: "/shop", search: { q: term || undefined, category: undefined, filter: undefined } });
               setSearchOpen(false);
             }}
           >
@@ -122,8 +122,8 @@ export function Navbar() {
               type="search"
               value={term}
               onChange={(e) => setTerm(e.target.value)}
-              placeholder="Search sarees, collections, colours"
-              aria-label="Search sarees"
+              placeholder="Search sarees, suits, collections, colours"
+              aria-label="Search sarees and suits"
               className="w-full bg-transparent text-sm outline-none placeholder:text-muted-foreground"
             />
             <button type="submit" className="text-xs uppercase tracking-[0.2em] text-muted-foreground hover:text-foreground">
