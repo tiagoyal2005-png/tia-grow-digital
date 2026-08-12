@@ -1,3 +1,6 @@
+import productSuitIvory from "@/assets/product-suit-ivory.jpg";
+import productSuitMaroon from "@/assets/product-suit-maroon.jpg";
+import productSuitTerracotta from "@/assets/product-suit-terracotta.jpg";
 import productMaroon from "@/assets/product-maroon.jpg";
 import productIvory from "@/assets/product-ivory.jpg";
 import productSand from "@/assets/product-sand.jpg";
@@ -13,6 +16,9 @@ import heroSaree from "@/assets/hero-saree.jpg";
 
 export const images = {
   heroSaree,
+  suitIvory: productSuitIvory,
+  suitMaroon: productSuitMaroon,
+  suitTerracotta: productSuitTerracotta,
   craftLoom,
   craftWeaveDetail,
   heritageVillage,
@@ -49,6 +55,8 @@ export function reviewsFor(slug: string) {
 /* Catalog                                                             */
 /* ------------------------------------------------------------------ */
 
+export type ProductType = "Saree" | "Suit";
+
 export type ProductCategory =
   | "Everyday Kota"
   | "Festive"
@@ -59,6 +67,7 @@ export type ProductCategory =
 export type Product = {
   slug: string;
   name: string;
+  type: ProductType;
   category: ProductCategory;
   collection: string;
   price: number;
@@ -82,6 +91,7 @@ export const products: Product[] = [
   {
     slug: "aranya-maroon-zari-kota-saree",
     name: "Aranya Deep Maroon Zari Saree",
+    type: "Saree",
     category: "Festive",
     collection: "aranya",
     price: 14800,
@@ -115,6 +125,7 @@ export const products: Product[] = [
   {
     slug: "kshara-ivory-handwoven-saree",
     name: "Kshara Ivory Handwoven Saree",
+    type: "Saree",
     category: "Everyday Kota",
     collection: "kshara",
     price: 8900,
@@ -141,6 +152,7 @@ export const products: Product[] = [
   {
     slug: "reti-sand-check-saree",
     name: "Reti Sand Check Saree",
+    type: "Saree",
     category: "Everyday Kota",
     collection: "kshara",
     price: 7600,
@@ -163,6 +175,7 @@ export const products: Product[] = [
   {
     slug: "vana-sage-zari-saree",
     name: "Vana Sage Zari Saree",
+    type: "Saree",
     category: "Zari & Gold",
     collection: "vana",
     price: 12400,
@@ -185,6 +198,7 @@ export const products: Product[] = [
   {
     slug: "dhun-charcoal-pallu-saree",
     name: "Dhun Charcoal Pallu Saree",
+    type: "Saree",
     category: "Contemporary",
     collection: "dhun",
     price: 10900,
@@ -208,6 +222,7 @@ export const products: Product[] = [
   {
     slug: "gulab-rose-buti-saree",
     name: "Gulab Rose Buti Saree",
+    type: "Saree",
     category: "Festive",
     collection: "aranya",
     price: 13600,
@@ -230,6 +245,7 @@ export const products: Product[] = [
   {
     slug: "anant-bridal-maroon-gold-saree",
     name: "Anant Bridal Maroon & Gold Saree",
+    type: "Saree",
     category: "Bridal & Occasion",
     collection: "anant",
     price: 24500,
@@ -257,6 +273,7 @@ export const products: Product[] = [
   {
     slug: "sahaj-ivory-gold-edge-saree",
     name: "Sahaj Ivory Gold-Edge Saree",
+    type: "Saree",
     category: "Zari & Gold",
     collection: "vana",
     price: 11200,
@@ -273,6 +290,87 @@ export const products: Product[] = [
       "The brief to the loom was simple: as little gold as the border can hold and still catch light.",
     details: ["6.3 m saree with unstitched blouse piece", "Weight approximately 430 g"],
     care: ["Dry clean recommended", "Dry in shade"],
+    isNew: true,
+  },
+  {
+    slug: "sharda-ivory-kota-doria-suit",
+    name: "Sharda Ivory Kota Doria Suit Set",
+    type: "Suit",
+    category: "Everyday Kota",
+    collection: "kshara",
+    price: 9400,
+    colour: "Ivory with maroon edge",
+    fabric: "Kota Doria pure cotton",
+    weave: "Fine khat, hand-finished maroon edge",
+    origin: "Kota, Rajasthan",
+    images: [
+      { src: productSuitIvory, alt: "Woman wearing an ivory handwoven Kota Doria suit set with a thin maroon border" },
+      { src: craftWeaveDetail, alt: "Close-up of the translucent ivory Kota Doria weave" },
+    ],
+    shortDescription:
+      "A three-piece ivory Kota Doria suit — kurta, straight pants and a sheer dupatta.",
+    story:
+      "The same khat that makes a Kota saree breathe, cut instead into an everyday suit. The dupatta is woven on the same warp as the kurta so the two never read as separate cloth.",
+    details: [
+      "Kurta, straight pants and 2.3 m dupatta",
+      "Unlined; cotton lining available on request",
+      "Handwoven by artisans of Kota",
+    ],
+    care: ["Hand wash cold separately", "Dry in shade", "Steam iron on low"],
+    variants: { label: "Size", options: ["XS", "S", "M", "L", "XL"] },
+    bestseller: true,
+  },
+  {
+    slug: "rajwada-maroon-zari-suit",
+    name: "Rajwada Maroon Zari Suit Set",
+    type: "Suit",
+    category: "Festive",
+    collection: "aranya",
+    price: 15600,
+    colour: "Deep maroon with antique gold",
+    fabric: "Kota Doria cotton–silk",
+    weave: "Handwoven with zari border on kurta and dupatta",
+    origin: "Kota, Rajasthan",
+    images: [
+      { src: productSuitMaroon, alt: "Woman wearing a deep maroon Kota Doria suit with an antique gold zari border" },
+      { src: craftLoom, alt: "Weaver at the pit loom in Kota" },
+    ],
+    shortDescription:
+      "Festive weight in deep maroon, with a narrow antique zari running through kurta and dupatta.",
+    story:
+      "Cut for long evenings: the ground is dyed in small batches, and the zari is inserted at the loom rather than stitched on afterwards.",
+    details: [
+      "Kurta, straight pants and 2.4 m zari dupatta",
+      "Real zari border",
+      "Made to order — allow 2 to 3 weeks",
+    ],
+    care: ["Dry clean only", "Store folded in muslin", "Avoid perfume contact with zari"],
+    variants: { label: "Size", options: ["XS", "S", "M", "L", "XL"] },
+    isNew: true,
+  },
+  {
+    slug: "mitti-terracotta-kota-doria-suit",
+    name: "Mitti Terracotta Kota Doria Suit Set",
+    type: "Suit",
+    category: "Contemporary",
+    collection: "dhun",
+    price: 11800,
+    colour: "Terracotta with sand dupatta",
+    fabric: "Kota Doria cotton–silk",
+    weave: "Handwoven, fine hand embroidery at the placket",
+    origin: "Kota, Rajasthan",
+    images: [
+      { src: productSuitTerracotta, alt: "Woman wearing a terracotta Kota Doria suit with a warm sand dupatta" },
+      { src: heritageVillage, alt: "Workshop in Kota where the fabric was woven" },
+    ],
+    shortDescription:
+      "Terracotta kurta with a warm sand Kota dupatta and quiet tonal embroidery.",
+    story:
+      "Terracotta is the hardest shade to hold across a batch, so we dye the full run of a season in one lot and stop when it is finished.",
+    details: ["Kurta, straight pants and 2.3 m dupatta", "Tonal hand embroidery at the placket"],
+    care: ["Dry clean recommended", "Dry in shade", "Low iron"],
+    variants: { label: "Size", options: ["XS", "S", "M", "L", "XL"] },
+    bestseller: true,
     isNew: true,
   },
 ];
@@ -299,6 +397,38 @@ export const sortOptions = [
 ] as const;
 
 export type SortValue = (typeof sortOptions)[number]["value"];
+
+export const sarees = products.filter((p) => p.type === "Saree");
+export const suits = products.filter((p) => p.type === "Suit");
+
+/** Shop-level browse tabs. */
+export const shopFilters = [
+  { value: "all", label: "All" },
+  { value: "sarees", label: "Sarees" },
+  { value: "suits", label: "Suits" },
+  { value: "new", label: "New arrivals" },
+  { value: "bestsellers", label: "Bestsellers" },
+  { value: "festive", label: "Festive collection" },
+] as const;
+
+export type ShopFilter = (typeof shopFilters)[number]["value"];
+
+export function filterProducts(list: Product[], filter: ShopFilter) {
+  switch (filter) {
+    case "sarees":
+      return list.filter((p) => p.type === "Saree");
+    case "suits":
+      return list.filter((p) => p.type === "Suit");
+    case "new":
+      return list.filter((p) => p.isNew);
+    case "bestsellers":
+      return list.filter((p) => p.bestseller);
+    case "festive":
+      return list.filter((p) => p.category === "Festive" || p.category === "Bridal & Occasion");
+    default:
+      return list;
+  }
+}
 
 export function productBySlug(slug: string) {
   return products.find((p) => p.slug === slug);
@@ -418,6 +548,7 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "what-makes-a-kota-doria-saree",
     title: "What actually makes a saree Kota Doria",
+    type: "Saree",
     category: "Kota Doria Heritage",
     excerpt:
       "The square khat, the thread count, the town of Kota — and why so much of what is sold as Kota Doria is not.",
@@ -444,6 +575,7 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "eleven-days-at-the-loom",
     title: "Eleven days at the loom",
+    type: "Saree",
     category: "Craftsmanship",
     excerpt:
       "A single festive saree, from warping the yarn to cutting it free. What each stage actually takes.",
@@ -469,6 +601,7 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "meet-the-weavers-of-kaithoon",
     title: "Meet the weavers of Kota",
+    type: "Saree",
     category: "Artisan Stories",
     excerpt:
       "The families we work with, what they are paid, and why the number of active looms keeps falling.",
@@ -488,6 +621,7 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "five-ways-to-drape-a-kota",
     title: "Five ways to drape a Kota, none of them fussy",
+    type: "Saree",
     category: "Styling",
     excerpt:
       "The fabric is light enough to hold a pleat without pinning. Here is how we wear it.",
@@ -507,6 +641,7 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "introducing-dhun",
     title: "Introducing Dhun — the pallu, widened",
+    type: "Saree",
     category: "New Collections",
     excerpt:
       "Our contemporary line began as an argument about how wide a traditional band could get before it stopped being traditional.",
@@ -526,6 +661,7 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "dressing-for-the-festive-season",
     title: "Dressing for the festive season, lightly",
+    type: "Saree",
     category: "Festive Inspiration",
     excerpt:
       "Heavy is not the same as festive. A case for handloom during the months everyone reaches for silk.",
