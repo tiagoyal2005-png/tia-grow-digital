@@ -1,16 +1,18 @@
-/** Kota Doria — brand configuration. Single source of truth for contact + nav. */
+/** KOTA DORIA — brand configuration. Single source of truth for contact + nav. */
 export const site = {
   name: "Kota Doria",
-  tagline: "Handwoven Kota Doria, reimagined",
+  nameDisplay: "KOTA DORIA",
+  tagline: "Handwoven in Kota, Rajasthan",
   statement:
-    "Kota Doria is a heritage-led fashion house working with Kota Doria weavers to create handwoven sarees for modern life.",
-  domain: "actdf.com",
-  email: "care@actdf.com",
+    "Kota Doria is a heritage textile house working with artisans of Kota to create handwoven sarees and suits for modern life.",
+  domain: "kotadoria.com",
+  email: "care@kotadoria.com",
   phone: "+916687243567",
   phoneDisplay: "+91 66872 43567",
   whatsappUrl:
-    "https://wa.me/916687243567?text=Hello%20Kota Doria%2C%20I%27d%20like%20help%20choosing%20a%20saree.",
+    "https://wa.me/916687243567?text=Hello%20Kota%20Doria%2C%20I%27d%20like%20help%20choosing%20a%20saree%20or%20suit.",
   address: "Atelier & Studio — Kota, Rajasthan, India",
+
   /** Placeholders — replace with real profile URLs when available. */
   socials: [
     { label: "Instagram (link coming soon)", href: "#", placeholder: true },
