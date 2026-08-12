@@ -156,7 +156,7 @@ function ShopPage() {
       </div>
 
       <p className="mt-6 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-        {visible.length} {visible.length === 1 ? "saree" : "sarees"}
+        {visible.length} {visible.length === 1 ? "piece" : "pieces"}
       </p>
 
       {visible.length === 0 ? (
