@@ -89,14 +89,29 @@ function ShopPage() {
       <Reveal>
         <p className="eyebrow">The shop</p>
         <h1 className="display mt-4 text-4xl md:text-6xl">
-          {q ? `Results for “${q}”` : "All sarees"}
+          {q ? `Results for “${q}”` : "Sarees & suits"}
         </h1>
         <p className="mt-5 max-w-lg text-sm text-muted-foreground">
-          Each saree is handwoven in Kota, Rajasthan, in limited numbers.
+          Every piece is handwoven by artisans of Kota, Rajasthan, in limited numbers.
         </p>
       </Reveal>
 
-      <div className="mt-12 flex flex-col gap-6 border-y border-border py-6 lg:flex-row lg:items-center lg:justify-between">
+      <nav aria-label="Browse" className="mt-10 flex flex-wrap gap-2 border-t border-border pt-8">
+        {shopFilters.map((f) => (
+          <button
+            key={f.value}
+            type="button"
+            aria-pressed={filter === f.value}
+            className={chip(filter === f.value)}
+            onClick={() => setFilter(f.value)}
+          >
+            {f.label}
+          </button>
+        ))}
+      </nav>
+
+      <div className="mt-8 flex flex-col gap-6 border-y border-border py-6 lg:flex-row lg:items-center lg:justify-between">
+
         <div className="flex flex-wrap gap-2">
           <button type="button" className={chip(category === "All")} onClick={() => setCategory("All")}>
             All
