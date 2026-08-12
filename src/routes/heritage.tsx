@@ -5,13 +5,13 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/heritage")({
   head: () => ({
     meta: [
-      { title: "Our Heritage — Kota Doria & Kota | Kota Doria" },
+      { title: "Our Heritage — The Weave of Kota, Rajasthan | Kota Doria" },
       {
         name: "description",
         content:
           "The story of Kota Doria: the khat weave, the weaving families of Kota, and how Kota Doria works with them today.",
       },
-      { property: "og:title", content: "Our Heritage — Kota Doria & Kota | Kota Doria" },
+      { property: "og:title", content: "Our Heritage — The Weave of Kota, Rajasthan | Kota Doria" },
       { property: "og:description", content: "The khat weave, Kota, and the weavers we buy from directly." },
     ],
   }),
