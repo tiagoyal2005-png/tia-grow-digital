@@ -18,10 +18,10 @@ export const Route = createFileRoute("/product/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Saree not found — ACTDF" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Saree not found — Kota Doria" }, { name: "robots", content: "noindex" }] };
     }
     const { product } = loaderData;
-    const title = `${product.name} — ACTDF`;
+    const title = `${product.name} — Kota Doria`;
     return {
       meta: [
         { title },

@@ -8,13 +8,13 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ACTDF — Handwoven Kota Doria Sarees from Rajasthan" },
+      { title: "Kota Doria — Handwoven Kota Doria Sarees from Rajasthan" },
       {
         name: "description",
         content:
-          "Handwoven Kota Doria sarees made with weavers in Kaithoon, Rajasthan. Quiet luxury, artisan craftsmanship and modern drapes.",
+          "Handwoven Kota Doria sarees made with weavers in Kota, Rajasthan. Quiet luxury, artisan craftsmanship and modern drapes.",
       },
-      { property: "og:title", content: "ACTDF — Handwoven Kota Doria Sarees" },
+      { property: "og:title", content: "Kota Doria — Handwoven Kota Doria Sarees" },
       {
         property: "og:description",
         content:
@@ -45,14 +45,14 @@ function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/70 to-transparent" />
         <div className="container-page relative flex min-h-[78vh] items-center py-20 md:min-h-[88vh]">
           <div className="max-w-xl">
-            <p className="eyebrow">Kota Doria · Kaithoon, Rajasthan</p>
+            <p className="eyebrow">Kota Doria · Kota, Rajasthan</p>
             <h1 className="display mt-6 text-[2.75rem] sm:text-6xl lg:text-7xl">
               Woven slowly,
               <br />
               worn for years
             </h1>
             <p className="mt-7 max-w-md text-base text-muted-foreground">
-              Handwoven Kota Doria sarees made with weaving families in Kaithoon —
+              Handwoven Kota Doria sarees made with weaving families in Kota —
               light enough for daily wear, considered enough for the evenings that
               matter.
             </p>
@@ -116,7 +116,7 @@ function HomePage() {
           alt="A weaver's hands working fine thread on a wooden pit loom"
           eyebrow="The weavers"
           title="Bought from the loom, not the market"
-          body="We work directly with weaving households in Kaithoon rather than through traders, and we agree the rate per saree before the warp is laid."
+          body="We work directly with weaving households in Kota rather than through traders, and we agree the rate per saree before the warp is laid."
           to="/heritage"
           cta="Our heritage"
         />
@@ -207,7 +207,7 @@ function HomePage() {
               which is the only thing that has ever preserved one.&rdquo;
             </p>
             <p className="mt-8 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              The ACTDF studio, Kota
+              The Kota Doria studio, Kota
             </p>
           </Reveal>
         </div>

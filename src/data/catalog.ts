@@ -88,7 +88,7 @@ export const products: Product[] = [
     colour: "Deep maroon",
     fabric: "Kota Doria cotton–silk",
     weave: "Handwoven khat with real zari border",
-    origin: "Kaithoon, Kota, Rajasthan",
+    origin: "Kota, Rajasthan",
     images: [
       { src: productMaroon, alt: "Model wearing a deep maroon Kota Doria saree with a gold zari border" },
       { src: craftWeaveDetail, alt: "Macro detail of the fine khat weave and gold zari thread" },
@@ -97,7 +97,7 @@ export const products: Product[] = [
     shortDescription:
       "A festive Kota Doria in deep maroon, finished with a hand-inserted antique zari border.",
     story:
-      "Woven over eleven days on a pit loom in Kaithoon, the maroon ground is dyed in small batches so the colour carries the depth of natural pigment rather than the flatness of machine dyeing.",
+      "Woven over eleven days on a pit loom in Kota, the maroon ground is dyed in small batches so the colour carries the depth of natural pigment rather than the flatness of machine dyeing.",
     details: [
       "6.3 m saree with 0.8 m unstitched blouse piece",
       "Real zari border, hand-inserted",
@@ -121,7 +121,7 @@ export const products: Product[] = [
     colour: "Ivory",
     fabric: "Kota Doria pure cotton",
     weave: "Fine khat, tissue-light",
-    origin: "Kaithoon, Kota, Rajasthan",
+    origin: "Kota, Rajasthan",
     images: [
       { src: productIvory, alt: "Model wearing an ivory handwoven Kota Doria cotton saree" },
       { src: craftWeaveDetail, alt: "Close-up of the translucent ivory Kota Doria weave" },
@@ -148,7 +148,7 @@ export const products: Product[] = [
     colour: "Sand with maroon check",
     fabric: "Kota Doria cotton–silk",
     weave: "Handwoven check",
-    origin: "Kaithoon, Kota, Rajasthan",
+    origin: "Kota, Rajasthan",
     images: [
       { src: productSand, alt: "Sand-beige Kota Doria saree with fine maroon checks, draped in studio light" },
       { src: craftLoom, alt: "Pit loom weaving in progress" },
@@ -169,7 +169,7 @@ export const products: Product[] = [
     colour: "Muted sage",
     fabric: "Kota Doria cotton–silk",
     weave: "Handwoven with slim zari border",
-    origin: "Kaithoon, Kota, Rajasthan",
+    origin: "Kota, Rajasthan",
     images: [
       { src: productSage, alt: "Model wearing a muted sage Kota Doria silk saree with a slim gold zari border" },
       { src: craftWeaveDetail, alt: "Detail of zari thread against the sage ground" },
@@ -191,7 +191,7 @@ export const products: Product[] = [
     colour: "Warm charcoal",
     fabric: "Kota Doria cotton–silk",
     weave: "Handwoven with striped pallu",
-    origin: "Kaithoon, Kota, Rajasthan",
+    origin: "Kota, Rajasthan",
     images: [
       { src: productCharcoal, alt: "Model wearing a charcoal Kota Doria saree with a cream striped pallu" },
       { src: heritageVillage, alt: "Workshop in Kota where the saree was woven" },
@@ -214,7 +214,7 @@ export const products: Product[] = [
     colour: "Blush rose",
     fabric: "Kota Doria cotton–silk",
     weave: "Handwoven with gold buti motifs",
-    origin: "Kaithoon, Kota, Rajasthan",
+    origin: "Kota, Rajasthan",
     images: [
       { src: productRose, alt: "Model wearing a blush rose Kota Doria saree with small gold buti motifs" },
       { src: craftWeaveDetail, alt: "Close-up of a woven gold buti motif" },
@@ -236,7 +236,7 @@ export const products: Product[] = [
     colour: "Deep maroon with antique gold",
     fabric: "Kota Doria silk",
     weave: "Handwoven, wide zari border and pallu",
-    origin: "Kaithoon, Kota, Rajasthan",
+    origin: "Kota, Rajasthan",
     images: [
       { src: productMaroon, alt: "Deep maroon and gold bridal Kota Doria saree" },
       { src: journalStyling, alt: "Folded maroon and cream sarees with brass shears" },
@@ -263,7 +263,7 @@ export const products: Product[] = [
     colour: "Ivory with gold edge",
     fabric: "Kota Doria cotton–silk",
     weave: "Handwoven, hairline zari edge",
-    origin: "Kaithoon, Kota, Rajasthan",
+    origin: "Kota, Rajasthan",
     images: [
       { src: productIvory, alt: "Ivory Kota Doria saree with a hairline gold edge" },
       { src: craftWeaveDetail, alt: "Hairline zari edge detail" },
@@ -420,7 +420,7 @@ export const journalPosts: JournalPost[] = [
     title: "What actually makes a saree Kota Doria",
     category: "Kota Doria Heritage",
     excerpt:
-      "The square khat, the thread count, the town of Kaithoon — and why so much of what is sold as Kota Doria is not.",
+      "The square khat, the thread count, the town of Kota — and why so much of what is sold as Kota Doria is not.",
     date: "2026-05-12",
     readingTime: "6 min read",
     image: craftWeaveDetail,
@@ -429,7 +429,7 @@ export const journalPosts: JournalPost[] = [
       {
         paragraphs: [
           "Kota Doria is defined by its khat — the small square formed by alternating cotton and silk threads in a fixed ratio. Traditionally, a single khat is made of fourteen threads: eight cotton and six silk. Change the ratio and the fabric loses the translucency that made it travel.",
-          "The weave belongs to Kaithoon, a town on the edge of Kota in Rajasthan, where the craft was brought from the south several centuries ago and stayed.",
+          "The weave belongs to Kota, a town on the edge of Kota in Rajasthan, where the craft was brought from the south several centuries ago and stayed.",
         ],
       },
       {
@@ -468,7 +468,7 @@ export const journalPosts: JournalPost[] = [
   },
   {
     slug: "meet-the-weavers-of-kaithoon",
-    title: "Meet the weavers of Kaithoon",
+    title: "Meet the weavers of Kota",
     category: "Artisan Stories",
     excerpt:
       "The families we work with, what they are paid, and why the number of active looms keeps falling.",

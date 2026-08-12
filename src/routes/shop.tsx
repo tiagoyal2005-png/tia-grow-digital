@@ -20,16 +20,16 @@ export const Route = createFileRoute("/shop")({
   }),
   head: () => ({
     meta: [
-      { title: "Shop Handwoven Kota Doria Sarees — ACTDF" },
+      { title: "Shop Handwoven Kota Doria Sarees — Kota Doria" },
       {
         name: "description",
         content:
           "Browse handwoven Kota Doria sarees: everyday cotton, festive zari, bridal and contemporary drapes. Filter by category, price and colour.",
       },
-      { property: "og:title", content: "Shop Handwoven Kota Doria Sarees — ACTDF" },
+      { property: "og:title", content: "Shop Handwoven Kota Doria Sarees — Kota Doria" },
       {
         property: "og:description",
-        content: "Handwoven Kota Doria sarees, woven in Kaithoon, Rajasthan.",
+        content: "Handwoven Kota Doria sarees, woven in Kota, Rajasthan.",
       },
     ],
   }),
@@ -77,7 +77,7 @@ function ShopPage() {
           {q ? `Results for “${q}”` : "All sarees"}
         </h1>
         <p className="mt-5 max-w-lg text-sm text-muted-foreground">
-          Each saree is handwoven in Kaithoon, Rajasthan, in limited numbers.
+          Each saree is handwoven in Kota, Rajasthan, in limited numbers.
         </p>
       </Reveal>
 

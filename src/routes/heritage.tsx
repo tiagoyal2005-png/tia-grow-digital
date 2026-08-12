@@ -5,14 +5,14 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/heritage")({
   head: () => ({
     meta: [
-      { title: "Our Heritage — Kota Doria & Kaithoon | ACTDF" },
+      { title: "Our Heritage — Kota Doria & Kota | Kota Doria" },
       {
         name: "description",
         content:
-          "The story of Kota Doria: the khat weave, the weaving families of Kaithoon, and how ACTDF works with them today.",
+          "The story of Kota Doria: the khat weave, the weaving families of Kota, and how Kota Doria works with them today.",
       },
-      { property: "og:title", content: "Our Heritage — Kota Doria & Kaithoon | ACTDF" },
-      { property: "og:description", content: "The khat weave, Kaithoon, and the weavers we buy from directly." },
+      { property: "og:title", content: "Our Heritage — Kota Doria & Kota | Kota Doria" },
+      { property: "og:description", content: "The khat weave, Kota, and the weavers we buy from directly." },
     ],
   }),
   component: HeritagePage,
@@ -29,7 +29,7 @@ function HeritagePage() {
           </h1>
           <p className="mt-8 text-base leading-relaxed text-muted-foreground">
             Kota Doria arrived in Rajasthan several centuries ago and settled in
-            Kaithoon, a town on the edge of Kota. It has been woven there ever
+            Kota, a town on the edge of Kota. It has been woven there ever
             since, on pit looms, in homes, largely by women.
           </p>
         </Reveal>

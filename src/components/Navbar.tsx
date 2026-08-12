@@ -63,7 +63,7 @@ export function Navbar() {
           </button>
         </div>
 
-        <Link to="/" aria-label="ACTDF — home" className="lg:flex-none">
+        <Link to="/" aria-label="Kota Doria — home" className="lg:flex-none">
           <Wordmark />
         </Link>
 

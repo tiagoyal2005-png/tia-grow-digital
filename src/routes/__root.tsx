@@ -78,9 +78,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "ACTDF — Handwoven Kota Doria Sarees" },
+      { title: "Kota Doria — Handwoven Kota Doria Sarees" },
       { name: "description", content: site.statement },
-      { property: "og:site_name", content: "ACTDF" },
+      { property: "og:site_name", content: "Kota Doria" },
       { property: "og:type", content: "website" },
       { property: "og:locale", content: "en_IN" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -102,7 +102,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Organization",
-          name: "ACTDF",
+          name: "Kota Doria",
           description: site.statement,
           email: `mailto:${site.email}`,
           telephone: site.phone,

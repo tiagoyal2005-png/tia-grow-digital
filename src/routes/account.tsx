@@ -8,12 +8,12 @@ import { useStore } from "@/lib/store";
 export const Route = createFileRoute("/account")({
   head: () => ({
     meta: [
-      { title: "Your Account — Orders, Tracking & Addresses | ACTDF" },
+      { title: "Your Account — Orders, Tracking & Addresses | Kota Doria" },
       {
         name: "description",
-        content: "Sign in to view ACTDF orders, track deliveries, manage saved addresses and your wishlist.",
+        content: "Sign in to view Kota Doria orders, track deliveries, manage saved addresses and your wishlist.",
       },
-      { property: "og:title", content: "Your Account — ACTDF" },
+      { property: "og:title", content: "Your Account — Kota Doria" },
       { property: "og:description", content: "Orders, tracking, addresses and recommendations." },
       { name: "robots", content: "noindex" },
     ],
@@ -135,7 +135,7 @@ export function AuthPanel({ onSignIn }: { onSignIn: (user: { name: string; email
     <div className="container-page section-y">
       <div className="mx-auto max-w-md">
         <p className="eyebrow">{mode === "signin" ? "Welcome back" : "Create an account"}</p>
-        <h1 className="display mt-4 text-4xl">{mode === "signin" ? "Sign in" : "Join ACTDF"}</h1>
+        <h1 className="display mt-4 text-4xl">{mode === "signin" ? "Sign in" : "Join Kota Doria"}</h1>
         <p className="mt-4 text-sm text-muted-foreground">
           An account is required to place an order, so you can track it and reorder later.
         </p>

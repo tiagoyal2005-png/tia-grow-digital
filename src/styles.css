@@ -5,11 +5,12 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * ACTDF — Kota Doria heritage fashion house.
- * Palette: Cream #F7F1E5, Sand #D8C3A5, Deep Maroon #5A1F2B,
- * Antique Gold #B08D57, Warm Charcoal #2E2926.
- * Cream + sand dominate. Maroon = primary action. Gold = whisper accent.
+ * KOTA DORIA — heritage textile house, Kota, Rajasthan.
+ * Palette: Ivory Cream #F5EBDD, Parchment #EFE2CF, Warm Sand #D9C2A3,
+ * Deep Maroon #642C32, Terracotta #A65D45, Warm Taupe #756457,
+ * Dark Brown #332822, Antique Gold #B39762 (tiny details only).
  */
+
 
 @theme inline {
   --radius-sm: 2px;
@@ -40,9 +41,12 @@
   --color-cream: var(--cream);
   --color-sand: var(--sand);
   --color-maroon: var(--maroon);
+  --color-terracotta: var(--terracotta);
+  --color-parchment: var(--parchment);
   --color-gold: var(--gold);
   --color-charcoal: var(--charcoal);
   --color-ivory: var(--ivory);
+
   --color-sidebar: var(--card);
   --color-sidebar-foreground: var(--foreground);
   --color-sidebar-primary: var(--primary);
@@ -58,36 +62,39 @@
 :root {
   --radius: 4px;
 
-  --cream: #f7f1e5;
-  --sand: #d8c3a5;
-  --maroon: #5a1f2b;
-  --gold: #b08d57;
-  --charcoal: #2e2926;
-  --ivory: #fdfaf3;
+  --cream: #f5ebdd;
+  --sand: #d9c2a3;
+  --maroon: #642c32;
+  --terracotta: #a65d45;
+  --parchment: #efe2cf;
+  --gold: #b39762;
+  --charcoal: #332822;
+  --ivory: #fdf8f0;
 
-  --background: #f7f1e5;
-  --foreground: #2e2926;
-  --card: #fdfaf3;
-  --card-foreground: #2e2926;
-  --popover: #fdfaf3;
-  --popover-foreground: #2e2926;
-  --primary: #5a1f2b;
-  --primary-foreground: #f7f1e5;
-  --secondary: #efe6d5;
-  --secondary-foreground: #2e2926;
-  --muted: #efe6d5;
-  --muted-foreground: #6d6257;
-  --accent: #b08d57;
-  --accent-foreground: #2e2926;
+  --background: #f5ebdd;
+  --foreground: #332822;
+  --card: #fdf8f0;
+  --card-foreground: #332822;
+  --popover: #fdf8f0;
+  --popover-foreground: #332822;
+  --primary: #642c32;
+  --primary-foreground: #f5ebdd;
+  --secondary: #efe2cf;
+  --secondary-foreground: #332822;
+  --muted: #efe2cf;
+  --muted-foreground: #756457;
+  --accent: #a65d45;
+  --accent-foreground: #f5ebdd;
   --destructive: #8a2b22;
-  --destructive-foreground: #f7f1e5;
-  --border: #e2d5bf;
-  --input: #e2d5bf;
-  --ring: #b08d57;
+  --destructive-foreground: #f5ebdd;
+  --border: #e0cfb5;
+  --input: #e0cfb5;
+  --ring: #a65d45;
 
-  --shadow-quiet: 0 1px 2px rgb(46 41 38 / 0.04), 0 18px 40px -28px rgb(46 41 38 / 0.22);
+  --shadow-quiet: 0 1px 2px rgb(51 40 34 / 0.04), 0 18px 40px -28px rgb(51 40 34 / 0.22);
   --transition-quiet: 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
+
 
 @layer base {
   * {

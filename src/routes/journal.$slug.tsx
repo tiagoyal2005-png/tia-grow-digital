@@ -10,12 +10,12 @@ export const Route = createFileRoute("/journal/$slug")({
   },
   head: ({ loaderData }) => {
     if (!loaderData) {
-      return { meta: [{ title: "Story not found — ACTDF" }, { name: "robots", content: "noindex" }] };
+      return { meta: [{ title: "Story not found — Kota Doria" }, { name: "robots", content: "noindex" }] };
     }
     const { post } = loaderData;
     return {
       meta: [
-        { title: `${post.title} — ACTDF Journal` },
+        { title: `${post.title} — Kota Doria Journal` },
         { name: "description", content: post.excerpt },
         { property: "og:title", content: post.title },
         { property: "og:description", content: post.excerpt },

@@ -166,7 +166,7 @@ export function StoreProvider({ children }: { children: ReactNode }) {
         ...(l.variant ? { variant: l.variant } : {}),
       }));
       const order: Order = {
-        id: `ACTDF-${String(Date.now()).slice(-6)}`,
+        id: `Kota Doria-${String(Date.now()).slice(-6)}`,
         placedAt: new Date().toISOString(),
         items,
         total: items.reduce((s, i) => s + i.price * i.qty, 0),

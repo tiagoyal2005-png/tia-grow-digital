@@ -6,10 +6,10 @@ import { useStore } from "@/lib/store";
 export const Route = createFileRoute("/bag")({
   head: () => ({
     meta: [
-      { title: "Your Bag — ACTDF" },
-      { name: "description", content: "Review the handwoven sarees in your ACTDF bag before checkout." },
-      { property: "og:title", content: "Your Bag — ACTDF" },
-      { property: "og:description", content: "Review your ACTDF bag." },
+      { title: "Your Bag — Kota Doria" },
+      { name: "description", content: "Review the handwoven sarees in your Kota Doria bag before checkout." },
+      { property: "og:title", content: "Your Bag — Kota Doria" },
+      { property: "og:description", content: "Review your Kota Doria bag." },
       { name: "robots", content: "noindex" },
     ],
   }),

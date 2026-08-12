@@ -6,13 +6,13 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact & Client Care — ACTDF" },
+      { title: "Contact & Client Care — Kota Doria" },
       {
         name: "description",
         content:
-          "Talk to ACTDF client care about choosing a saree, an existing order, made-to-order bridal pieces, or care and repair.",
+          "Talk to Kota Doria client care about choosing a saree, an existing order, made-to-order bridal pieces, or care and repair.",
       },
-      { property: "og:title", content: "Contact & Client Care — ACTDF" },
+      { property: "og:title", content: "Contact & Client Care — Kota Doria" },
       { property: "og:description", content: "Client care for sizing, orders, bridal commissions and saree care." },
     ],
   }),

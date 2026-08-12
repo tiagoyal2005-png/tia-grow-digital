@@ -1,15 +1,15 @@
-/** ACTDF — brand configuration. Single source of truth for contact + nav. */
+/** Kota Doria — brand configuration. Single source of truth for contact + nav. */
 export const site = {
-  name: "ACTDF",
+  name: "Kota Doria",
   tagline: "Handwoven Kota Doria, reimagined",
   statement:
-    "ACTDF is a heritage-led fashion house working with Kota Doria weavers to create handwoven sarees for modern life.",
+    "Kota Doria is a heritage-led fashion house working with Kota Doria weavers to create handwoven sarees for modern life.",
   domain: "actdf.com",
   email: "care@actdf.com",
   phone: "+916687243567",
   phoneDisplay: "+91 66872 43567",
   whatsappUrl:
-    "https://wa.me/916687243567?text=Hello%20ACTDF%2C%20I%27d%20like%20help%20choosing%20a%20saree.",
+    "https://wa.me/916687243567?text=Hello%20Kota Doria%2C%20I%27d%20like%20help%20choosing%20a%20saree.",
   address: "Atelier & Studio — Kota, Rajasthan, India",
   /** Placeholders — replace with real profile URLs when available. */
   socials: [

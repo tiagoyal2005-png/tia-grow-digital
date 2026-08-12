@@ -11,9 +11,9 @@ const paymentMethods = ["UPI", "Card", "Net banking", "Cash on delivery"] as con
 export const Route = createFileRoute("/checkout")({
   head: () => ({
     meta: [
-      { title: "Secure Checkout — ACTDF" },
-      { name: "description", content: "Complete your ACTDF order with UPI, card, net banking or cash on delivery." },
-      { property: "og:title", content: "Secure Checkout — ACTDF" },
+      { title: "Secure Checkout — Kota Doria" },
+      { name: "description", content: "Complete your Kota Doria order with UPI, card, net banking or cash on delivery." },
+      { property: "og:title", content: "Secure Checkout — Kota Doria" },
       { property: "og:description", content: "Secure checkout for handwoven Kota Doria sarees." },
       { name: "robots", content: "noindex" },
     ],
