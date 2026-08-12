@@ -1,6 +1,15 @@
 import { cn } from "@/lib/utils";
 
-/** ACTDF wordmark — text-based, easy to replace with a final logo asset. */
+/**
+ * KOTA DORIA wordmark.
+ *
+ * DROP-IN LOGO SLOT: when the final Canva logo asset is available, save it to
+ * `src/assets/logo-kota-doria.svg` (or .png), import it here and swap the
+ * <span> block for an <img>. Nothing else in the app needs to change.
+ *
+ *   import logo from "@/assets/logo-kota-doria.svg";
+ *   return <img src={logo} alt="Kota Doria" className="h-9 w-auto" />;
+ */
 export function Wordmark({
   className,
   subtitle = true,
@@ -9,13 +18,17 @@ export function Wordmark({
   subtitle?: boolean;
 }) {
   return (
-    <span className={cn("flex flex-col leading-none", className)}>
-      <span className="font-serif text-2xl font-light tracking-[0.34em] text-foreground md:text-[1.6rem]">
-        ACTDF
+    <span className={cn("flex flex-col items-start leading-none", className)}>
+      <span className="font-serif text-[1.35rem] font-normal tracking-[0.3em] text-foreground md:text-[1.55rem]">
+        KOTA DORIA
       </span>
       {subtitle ? (
-        <span className="mt-1.5 text-[9px] font-medium uppercase tracking-[0.28em] text-muted-foreground">
-          Handwoven Kota Doria
+        <span className="mt-2 flex w-full items-center gap-2">
+          <span className="h-px flex-1 bg-gold/60" aria-hidden="true" />
+          <span className="text-[8.5px] font-medium uppercase tracking-[0.34em] text-muted-foreground">
+            Rajasthan
+          </span>
+          <span className="h-px flex-1 bg-gold/60" aria-hidden="true" />
         </span>
       ) : null}
     </span>

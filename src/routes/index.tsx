@@ -1,24 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
 import heroSaree from "@/assets/hero-saree.jpg";
-import { collections, craftJourney, images, journalPosts, products } from "@/data/catalog";
+import { collections, craftJourney, images, journalPosts, products, reviews } from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
+import { StarRating } from "@/components/StarRating";
 import { Reveal } from "@/components/Reveal";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "ACTDF — Handwoven Kota Doria Sarees from Rajasthan" },
+      { title: "Kota Doria — Handwoven Sarees & Suits from Kota, Rajasthan" },
       {
         name: "description",
         content:
-          "Handwoven Kota Doria sarees made with weavers in Kaithoon, Rajasthan. Quiet luxury, artisan craftsmanship and modern drapes.",
+          "Handwoven Kota Doria sarees and suit sets made by artisans of Kota, Rajasthan. Traditional khat weave, real zari, and a heritage textile house you can buy from directly.",
       },
-      { property: "og:title", content: "ACTDF — Handwoven Kota Doria Sarees" },
+      { property: "og:title", content: "Kota Doria — Handwoven Sarees & Suits from Rajasthan" },
       {
         property: "og:description",
         content:
-          "A heritage-led fashion house working with Kota Doria weavers to create handwoven sarees for modern life.",
+          "A heritage textile house working with artisans of Kota to weave sarees and suits for modern life.",
       },
     ],
   }),
@@ -45,29 +47,29 @@ function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/70 to-transparent" />
         <div className="container-page relative flex min-h-[78vh] items-center py-20 md:min-h-[88vh]">
           <div className="max-w-xl">
-            <p className="eyebrow">Kota Doria · Kaithoon, Rajasthan</p>
+            <p className="eyebrow">Handwoven in Kota, Rajasthan</p>
             <h1 className="display mt-6 text-[2.75rem] sm:text-6xl lg:text-7xl">
-              Woven slowly,
+              The weave of Kota,
               <br />
-              worn for years
+              woven by hand
             </h1>
             <p className="mt-7 max-w-md text-base text-muted-foreground">
-              Handwoven Kota Doria sarees made with weaving families in Kaithoon —
-              light enough for daily wear, considered enough for the evenings that
-              matter.
+              Sarees and suit sets in traditional Kota Doria — light enough for daily
+              wear, considered enough for the evenings that matter.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/shop"
                 className="inline-flex items-center justify-center bg-primary px-10 py-4 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90"
               >
-                Shop sarees
+                Shop Kota Doria
               </Link>
               <Link
                 to="/heritage"
                 className="inline-flex items-center justify-center border border-foreground/25 px-10 py-4 text-xs uppercase tracking-[0.22em] transition-colors hover:border-foreground"
               >
-                Explore our heritage
+                Discover our heritage
+
               </Link>
             </div>
           </div>
@@ -80,8 +82,9 @@ function HomePage() {
           <div>
             <p className="eyebrow">Most worn</p>
             <h2 id="bestsellers" className="display mt-4 text-4xl md:text-5xl">
-              Bestselling sarees
+              Bestsellers
             </h2>
+
           </div>
           <Link to="/shop" className="link-underline text-xs uppercase tracking-[0.2em]">
             View all
@@ -116,7 +119,7 @@ function HomePage() {
           alt="A weaver's hands working fine thread on a wooden pit loom"
           eyebrow="The weavers"
           title="Bought from the loom, not the market"
-          body="We work directly with weaving households in Kaithoon rather than through traders, and we agree the rate per saree before the warp is laid."
+          body="We work directly with weaving households in Kota rather than through traders, and we agree the rate per saree before the warp is laid."
           to="/heritage"
           cta="Our heritage"
         />
@@ -198,7 +201,137 @@ function HomePage() {
         </div>
       </section>
 
+      {/* Kota Doria suits */}
+      <section className="grid border-t border-border bg-card lg:grid-cols-2" aria-labelledby="suits-home">
+        <div className="hover-zoom aspect-[4/5] overflow-hidden bg-muted lg:aspect-auto">
+          <img
+            src={images.suitIvory}
+            alt="Woman wearing an ivory handwoven Kota Doria suit set with a thin maroon border"
+            loading="lazy"
+            decoding="async"
+            className="h-full w-full object-cover"
+          />
+        </div>
+        <div className="flex items-center px-5 py-16 md:px-16">
+          <Reveal className="max-w-md">
+            <p className="eyebrow">New category</p>
+            <h2 id="suits-home" className="display mt-4 text-4xl md:text-5xl">
+              Kota Doria suits
+            </h2>
+            <p className="mt-6 text-sm leading-relaxed text-muted-foreground">
+              Kurta, straight pants and dupatta lifted from a single warp, so the three
+              pieces read as one cloth. The same khat weave as our sarees, cut for days
+              that do not stop.
+            </p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <Link
+                to="/suits"
+                className="inline-flex items-center justify-center bg-primary px-9 py-3.5 text-xs uppercase tracking-[0.2em] text-primary-foreground transition-opacity hover:opacity-90"
+              >
+                Shop suits
+              </Link>
+              <Link
+                to="/shop"
+                search={{ filter: "new", q: undefined, category: undefined }}
+                className="inline-flex items-center justify-center border border-foreground/25 px-9 py-3.5 text-xs uppercase tracking-[0.2em] transition-colors hover:border-foreground"
+              >
+                New arrivals
+              </Link>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Artisans of Kota */}
+      <section className="border-t border-border" aria-labelledby="artisans">
+        <div className="container-page section-y">
+          <Reveal className="max-w-2xl">
+            <p className="eyebrow">Artisans of Kota</p>
+            <h2 id="artisans" className="display mt-4 text-4xl md:text-5xl">
+              The hands behind the khat
+            </h2>
+            <p className="mt-7 text-base leading-relaxed text-muted-foreground">
+              Every piece here is woven by artisan households in and around Kota,
+              Rajasthan. We buy directly from the loom and agree the rate per piece
+              before the warp is laid, so the price you pay reaches the people who
+              made the cloth.
+            </p>
+          </Reveal>
+          <div className="mt-14 grid gap-10 md:grid-cols-3">
+            {[
+              {
+                title: "Bought at the loom",
+                body: "No trader in between. Rates are agreed in advance and paid on completion.",
+              },
+              {
+                title: "Woven, not printed",
+                body: "Borders, buti and pallu bands are worked into the cloth at the loom.",
+              },
+              {
+                title: "Small runs",
+                body: "Batches are limited by what a household can weave in a season, not by demand.",
+              },
+            ].map((item, i) => (
+              <Reveal key={item.title} delay={i * 90}>
+                <span className="block h-px w-12 bg-gold" aria-hidden="true" />
+                <h3 className="mt-6 font-serif text-2xl font-light">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{item.body}</p>
+              </Reveal>
+            ))}
+          </div>
+          <Link
+            to="/heritage"
+            className="link-underline mt-12 inline-block text-xs uppercase tracking-[0.2em]"
+          >
+            Read our heritage
+          </Link>
+        </div>
+      </section>
+
+      {/* Customer stories */}
+      <section className="border-t border-border bg-card" aria-labelledby="stories">
+        <div className="container-page section-y">
+          <Reveal className="max-w-2xl">
+            <p className="eyebrow">Customer stories</p>
+            <h2 id="stories" className="display mt-4 text-4xl md:text-5xl">
+              Worn, and written about
+            </h2>
+          </Reveal>
+          {reviews.length === 0 ? (
+            <Reveal className="mt-10 max-w-2xl">
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                We publish reviews, customer photographs and video stories only from
+                verified purchases, so this space stays empty until the first ones
+                arrive. If you have bought from us, we would like to hear how the
+                piece wears.
+              </p>
+              <Link
+                to="/contact"
+                className="link-underline mt-8 inline-block text-xs uppercase tracking-[0.2em]"
+              >
+                Share your story
+              </Link>
+            </Reveal>
+          ) : (
+            <div className="mt-12 grid gap-10 md:grid-cols-3">
+              {reviews.slice(0, 3).map((review) => (
+                <Reveal key={review.id}>
+                  <StarRating rating={review.rating} />
+                  <h3 className="mt-4 font-serif text-xl font-light">{review.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{review.body}</p>
+                  <p className="mt-4 text-xs uppercase tracking-[0.18em] text-muted-foreground">
+                    {review.author}
+                    {review.verifiedPurchase ? " · Verified purchase" : ""}
+                  </p>
+                </Reveal>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Editorial statement */}
+
       <section className="border-y border-border bg-card">
         <div className="container-page section-y text-center">
           <Reveal>
@@ -207,7 +340,7 @@ function HomePage() {
               which is the only thing that has ever preserved one.&rdquo;
             </p>
             <p className="mt-8 text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              The ACTDF studio, Kota
+              The Kota Doria studio, Kota
             </p>
           </Reveal>
         </div>
@@ -259,7 +392,7 @@ function HomePage() {
         <div className="container-page section-y text-center">
           <Reveal>
             <h2 className="display mx-auto max-w-2xl text-4xl md:text-5xl">
-              Find the saree you will keep
+              Find the piece you will keep
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-sm text-muted-foreground">
               Every piece is handwoven in limited numbers. When a weave sells out,
@@ -269,7 +402,7 @@ function HomePage() {
               to="/shop"
               className="mt-10 inline-flex items-center gap-3 bg-primary px-12 py-4 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Shop sarees
+              Shop Kota Doria
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </Reveal>

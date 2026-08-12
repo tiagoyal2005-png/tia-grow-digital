@@ -1,35 +1,48 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  filterProducts,
   priceBands,
   productCategories,
   products,
+  shopFilters,
   sortOptions,
+  type ShopFilter,
   type SortValue,
 } from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 
-type ShopSearch = { q?: string | undefined; category?: string | undefined };
+type ShopSearch = {
+  q?: string | undefined;
+  category?: string | undefined;
+  filter?: ShopFilter | undefined;
+};
+
+const filterValues = shopFilters.map((f) => f.value) as readonly string[];
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (search: Record<string, unknown>): ShopSearch => ({
     q: typeof search['q'] === "string" && search['q'] ? search['q'] : undefined,
     category:
       typeof search['category'] === "string" && search['category'] ? search['category'] : undefined,
+    filter:
+      typeof search['filter'] === "string" && filterValues.includes(search['filter'])
+        ? (search['filter'] as ShopFilter)
+        : undefined,
   }),
   head: () => ({
     meta: [
-      { title: "Shop Handwoven Kota Doria Sarees — ACTDF" },
+      { title: "Shop Handwoven Kota Doria Sarees & Suits — Kota Doria" },
       {
         name: "description",
         content:
-          "Browse handwoven Kota Doria sarees: everyday cotton, festive zari, bridal and contemporary drapes. Filter by category, price and colour.",
+          "Browse handwoven Kota Doria sarees and suits: everyday cotton, festive zari, bridal and contemporary. Filter by category, price and colour.",
       },
-      { property: "og:title", content: "Shop Handwoven Kota Doria Sarees — ACTDF" },
+      { property: "og:title", content: "Shop Handwoven Kota Doria Sarees & Suits" },
       {
         property: "og:description",
-        content: "Handwoven Kota Doria sarees, woven in Kaithoon, Rajasthan.",
+        content: "Handwoven Kota Doria sarees and suits, made by artisans of Kota, Rajasthan.",
       },
     ],
   }),
@@ -37,17 +50,18 @@ export const Route = createFileRoute("/shop")({
 });
 
 function ShopPage() {
-  const { q, category: initialCategory } = Route.useSearch();
+  const { q, category: initialCategory, filter: initialFilter } = Route.useSearch();
   const [category, setCategory] = useState<string>(initialCategory ?? "All");
+  const [filter, setFilter] = useState<ShopFilter>(initialFilter ?? "all");
   const [band, setBand] = useState<string>("All");
   const [sort, setSort] = useState<SortValue>("featured");
 
   const visible = useMemo(() => {
-    let list = [...products];
+    let list = filterProducts([...products], filter);
     if (q) {
       const needle = q.toLowerCase();
       list = list.filter((p) =>
-        [p.name, p.category, p.colour, p.fabric, p.shortDescription]
+        [p.name, p.category, p.type, p.colour, p.fabric, p.shortDescription]
           .join(" ")
           .toLowerCase()
           .includes(needle),
@@ -62,26 +76,42 @@ function ShopPage() {
     if (sort === "price-desc") list.sort((a, b) => b.price - a.price);
     if (sort === "new") list.sort((a, b) => Number(!!b.isNew) - Number(!!a.isNew));
     return list;
-  }, [q, category, band, sort]);
+  }, [q, category, band, sort, filter]);
 
   const chip = (active: boolean) =>
     `px-4 py-2 text-xs uppercase tracking-[0.16em] border transition-colors ${
       active ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-foreground"
     }`;
 
+
   return (
     <div className="container-page section-y">
       <Reveal>
         <p className="eyebrow">The shop</p>
         <h1 className="display mt-4 text-4xl md:text-6xl">
-          {q ? `Results for “${q}”` : "All sarees"}
+          {q ? `Results for “${q}”` : "Sarees & suits"}
         </h1>
         <p className="mt-5 max-w-lg text-sm text-muted-foreground">
-          Each saree is handwoven in Kaithoon, Rajasthan, in limited numbers.
+          Every piece is handwoven by artisans of Kota, Rajasthan, in limited numbers.
         </p>
       </Reveal>
 
-      <div className="mt-12 flex flex-col gap-6 border-y border-border py-6 lg:flex-row lg:items-center lg:justify-between">
+      <nav aria-label="Browse" className="mt-10 flex flex-wrap gap-2 border-t border-border pt-8">
+        {shopFilters.map((f) => (
+          <button
+            key={f.value}
+            type="button"
+            aria-pressed={filter === f.value}
+            className={chip(filter === f.value)}
+            onClick={() => setFilter(f.value)}
+          >
+            {f.label}
+          </button>
+        ))}
+      </nav>
+
+      <div className="mt-8 flex flex-col gap-6 border-y border-border py-6 lg:flex-row lg:items-center lg:justify-between">
+
         <div className="flex flex-wrap gap-2">
           <button type="button" className={chip(category === "All")} onClick={() => setCategory("All")}>
             All
@@ -126,7 +156,7 @@ function ShopPage() {
       </div>
 
       <p className="mt-6 text-xs uppercase tracking-[0.16em] text-muted-foreground">
-        {visible.length} {visible.length === 1 ? "saree" : "sarees"}
+        {visible.length} {visible.length === 1 ? "piece" : "pieces"}
       </p>
 
       {visible.length === 0 ? (

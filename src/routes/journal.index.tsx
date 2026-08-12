@@ -6,14 +6,14 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/journal/")({
   head: () => ({
     meta: [
-      { title: "The Journal — Heritage, Artisans & Styling | ACTDF" },
+      { title: "The Journal — Heritage, Artisans & Styling | Kota Doria" },
       {
         name: "description",
         content:
           "A journal of Kota Doria heritage, artisan stories, craftsmanship, styling notes, new collections and festive inspiration.",
       },
-      { property: "og:title", content: "The Journal — ACTDF" },
-      { property: "og:description", content: "Heritage, artisan stories, craftsmanship and styling from the ACTDF studio." },
+      { property: "og:title", content: "The Journal — Kota Doria" },
+      { property: "og:description", content: "Heritage, artisan stories, craftsmanship and styling from the Kota Doria studio." },
     ],
   }),
   component: JournalPage,

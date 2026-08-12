@@ -5,13 +5,13 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/collections/")({
   head: () => ({
     meta: [
-      { title: "Collections — ACTDF Handwoven Kota Doria" },
+      { title: "Collections — Handwoven Kota Doria Sarees & Suits" },
       {
         name: "description",
         content:
           "Five collections of handwoven Kota Doria: Aranya festive weaves, Kshara everyday cotton, Vana restrained zari, Dhun contemporary drapes and Anant bridal.",
       },
-      { property: "og:title", content: "Collections — ACTDF" },
+      { property: "og:title", content: "Collections — Kota Doria" },
       {
         property: "og:description",
         content: "Festive, everyday, zari, contemporary and bridal Kota Doria collections.",
