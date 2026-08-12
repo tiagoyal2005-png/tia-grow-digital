@@ -24,9 +24,15 @@ export function Footer() {
           <ul className="mt-5 space-y-3">
             <li>
               <Link to="/shop" className="link-underline text-muted-foreground hover:text-foreground">
-                All sarees
+                All sarees &amp; suits
               </Link>
             </li>
+            <li>
+              <Link to="/suits" className="link-underline text-muted-foreground hover:text-foreground">
+                Kota Doria suits
+              </Link>
+            </li>
+
             {collections.map((c) => (
               <li key={c.slug}>
                 <Link
