@@ -8,17 +8,17 @@ import { Reveal } from "@/components/Reveal";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Kota Doria — Handwoven Kota Doria Sarees from Rajasthan" },
+      { title: "Kota Doria — Handwoven Sarees & Suits from Kota, Rajasthan" },
       {
         name: "description",
         content:
-          "Handwoven Kota Doria sarees made with weavers in Kota, Rajasthan. Quiet luxury, artisan craftsmanship and modern drapes.",
+          "Handwoven Kota Doria sarees and suit sets made by artisans of Kota, Rajasthan. Traditional khat weave, real zari, and a heritage textile house you can buy from directly.",
       },
-      { property: "og:title", content: "Kota Doria — Handwoven Kota Doria Sarees" },
+      { property: "og:title", content: "Kota Doria — Handwoven Sarees & Suits from Rajasthan" },
       {
         property: "og:description",
         content:
-          "A heritage-led fashion house working with Kota Doria weavers to create handwoven sarees for modern life.",
+          "A heritage textile house working with artisans of Kota to weave sarees and suits for modern life.",
       },
     ],
   }),
@@ -45,29 +45,29 @@ function HomePage() {
         <div className="absolute inset-0 bg-gradient-to-r from-cream/95 via-cream/70 to-transparent" />
         <div className="container-page relative flex min-h-[78vh] items-center py-20 md:min-h-[88vh]">
           <div className="max-w-xl">
-            <p className="eyebrow">Kota Doria · Kota, Rajasthan</p>
+            <p className="eyebrow">Handwoven in Kota, Rajasthan</p>
             <h1 className="display mt-6 text-[2.75rem] sm:text-6xl lg:text-7xl">
-              Woven slowly,
+              The weave of Kota,
               <br />
-              worn for years
+              woven by hand
             </h1>
             <p className="mt-7 max-w-md text-base text-muted-foreground">
-              Handwoven Kota Doria sarees made with weaving families in Kota —
-              light enough for daily wear, considered enough for the evenings that
-              matter.
+              Sarees and suit sets in traditional Kota Doria — light enough for daily
+              wear, considered enough for the evenings that matter.
             </p>
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
                 to="/shop"
                 className="inline-flex items-center justify-center bg-primary px-10 py-4 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90"
               >
-                Shop sarees
+                Shop Kota Doria
               </Link>
               <Link
                 to="/heritage"
                 className="inline-flex items-center justify-center border border-foreground/25 px-10 py-4 text-xs uppercase tracking-[0.22em] transition-colors hover:border-foreground"
               >
-                Explore our heritage
+                Discover our heritage
+
               </Link>
             </div>
           </div>
