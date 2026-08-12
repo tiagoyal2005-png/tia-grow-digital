@@ -548,7 +548,6 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "what-makes-a-kota-doria-saree",
     title: "What actually makes a saree Kota Doria",
-    type: "Saree",
     category: "Kota Doria Heritage",
     excerpt:
       "The square khat, the thread count, the town of Kota — and why so much of what is sold as Kota Doria is not.",
@@ -575,7 +574,6 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "eleven-days-at-the-loom",
     title: "Eleven days at the loom",
-    type: "Saree",
     category: "Craftsmanship",
     excerpt:
       "A single festive saree, from warping the yarn to cutting it free. What each stage actually takes.",
@@ -599,9 +597,8 @@ export const journalPosts: JournalPost[] = [
     ],
   },
   {
-    slug: "meet-the-weavers-of-kaithoon",
+    slug: "meet-the-artisans-of-kota",
     title: "Meet the weavers of Kota",
-    type: "Saree",
     category: "Artisan Stories",
     excerpt:
       "The families we work with, what they are paid, and why the number of active looms keeps falling.",
@@ -621,7 +618,6 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "five-ways-to-drape-a-kota",
     title: "Five ways to drape a Kota, none of them fussy",
-    type: "Saree",
     category: "Styling",
     excerpt:
       "The fabric is light enough to hold a pleat without pinning. Here is how we wear it.",
@@ -641,7 +637,6 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "introducing-dhun",
     title: "Introducing Dhun — the pallu, widened",
-    type: "Saree",
     category: "New Collections",
     excerpt:
       "Our contemporary line began as an argument about how wide a traditional band could get before it stopped being traditional.",
@@ -661,7 +656,6 @@ export const journalPosts: JournalPost[] = [
   {
     slug: "dressing-for-the-festive-season",
     title: "Dressing for the festive season, lightly",
-    type: "Saree",
     category: "Festive Inspiration",
     excerpt:
       "Heavy is not the same as festive. A case for handloom during the months everyone reaches for silk.",
