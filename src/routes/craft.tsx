@@ -9,7 +9,7 @@ export const Route = createFileRoute("/craft")({
       {
         name: "description",
         content:
-          "Thread, weave, craft, finish: the five stages behind every handwoven Kota Doria Kota Doria saree, from warping the yarn to the final fold.",
+          "Thread, weave, craft, finish: the five stages behind every handwoven Kota Doria saree, from warping the yarn to the final fold.",
       },
       { property: "og:title", content: "Craft & Process — Thread to Finish | Kota Doria" },
       { property: "og:description", content: "The five stages behind every handwoven Kota Doria saree." },
