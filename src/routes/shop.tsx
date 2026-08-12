@@ -1,35 +1,48 @@
 import { useMemo, useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
+  filterProducts,
   priceBands,
   productCategories,
   products,
+  shopFilters,
   sortOptions,
+  type ShopFilter,
   type SortValue,
 } from "@/data/catalog";
 import { ProductCard } from "@/components/ProductCard";
 import { Reveal } from "@/components/Reveal";
 
-type ShopSearch = { q?: string | undefined; category?: string | undefined };
+type ShopSearch = {
+  q?: string | undefined;
+  category?: string | undefined;
+  filter?: ShopFilter | undefined;
+};
+
+const filterValues = shopFilters.map((f) => f.value) as readonly string[];
 
 export const Route = createFileRoute("/shop")({
   validateSearch: (search: Record<string, unknown>): ShopSearch => ({
     q: typeof search['q'] === "string" && search['q'] ? search['q'] : undefined,
     category:
       typeof search['category'] === "string" && search['category'] ? search['category'] : undefined,
+    filter:
+      typeof search['filter'] === "string" && filterValues.includes(search['filter'])
+        ? (search['filter'] as ShopFilter)
+        : undefined,
   }),
   head: () => ({
     meta: [
-      { title: "Shop Handwoven Kota Doria Sarees — Kota Doria" },
+      { title: "Shop Handwoven Kota Doria Sarees & Suits — Kota Doria" },
       {
         name: "description",
         content:
-          "Browse handwoven Kota Doria sarees: everyday cotton, festive zari, bridal and contemporary drapes. Filter by category, price and colour.",
+          "Browse handwoven Kota Doria sarees and suits: everyday cotton, festive zari, bridal and contemporary. Filter by category, price and colour.",
       },
-      { property: "og:title", content: "Shop Handwoven Kota Doria Sarees — Kota Doria" },
+      { property: "og:title", content: "Shop Handwoven Kota Doria Sarees & Suits" },
       {
         property: "og:description",
-        content: "Handwoven Kota Doria sarees, woven in Kota, Rajasthan.",
+        content: "Handwoven Kota Doria sarees and suits, made by artisans of Kota, Rajasthan.",
       },
     ],
   }),
@@ -37,17 +50,18 @@ export const Route = createFileRoute("/shop")({
 });
 
 function ShopPage() {
-  const { q, category: initialCategory } = Route.useSearch();
+  const { q, category: initialCategory, filter: initialFilter } = Route.useSearch();
   const [category, setCategory] = useState<string>(initialCategory ?? "All");
+  const [filter, setFilter] = useState<ShopFilter>(initialFilter ?? "all");
   const [band, setBand] = useState<string>("All");
   const [sort, setSort] = useState<SortValue>("featured");
 
   const visible = useMemo(() => {
-    let list = [...products];
+    let list = filterProducts([...products], filter);
     if (q) {
       const needle = q.toLowerCase();
       list = list.filter((p) =>
-        [p.name, p.category, p.colour, p.fabric, p.shortDescription]
+        [p.name, p.category, p.type, p.colour, p.fabric, p.shortDescription]
           .join(" ")
           .toLowerCase()
           .includes(needle),
@@ -62,12 +76,13 @@ function ShopPage() {
     if (sort === "price-desc") list.sort((a, b) => b.price - a.price);
     if (sort === "new") list.sort((a, b) => Number(!!b.isNew) - Number(!!a.isNew));
     return list;
-  }, [q, category, band, sort]);
+  }, [q, category, band, sort, filter]);
 
   const chip = (active: boolean) =>
     `px-4 py-2 text-xs uppercase tracking-[0.16em] border transition-colors ${
       active ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-foreground"
     }`;
+
 
   return (
     <div className="container-page section-y">
