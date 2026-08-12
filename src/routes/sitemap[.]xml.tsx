@@ -5,6 +5,8 @@ import { site } from "@/data/site";
 const staticPaths = [
   "/",
   "/shop",
+  "/suits",
+
   "/collections",
   "/heritage",
   "/craft",
