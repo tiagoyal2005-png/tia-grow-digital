@@ -316,7 +316,7 @@ function HomePage() {
             <div className="mt-12 grid gap-10 md:grid-cols-3">
               {reviews.slice(0, 3).map((review) => (
                 <Reveal key={review.id}>
-                  <StarRating value={review.rating} />
+                  <StarRating rating={review.rating} />
                   <h3 className="mt-4 font-serif text-xl font-light">{review.title}</h3>
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{review.body}</p>
                   <p className="mt-4 text-xs uppercase tracking-[0.18em] text-muted-foreground">
@@ -392,7 +392,7 @@ function HomePage() {
         <div className="container-page section-y text-center">
           <Reveal>
             <h2 className="display mx-auto max-w-2xl text-4xl md:text-5xl">
-              Find the saree you will keep
+              Find the piece you will keep
             </h2>
             <p className="mx-auto mt-6 max-w-lg text-sm text-muted-foreground">
               Every piece is handwoven in limited numbers. When a weave sells out,
@@ -402,7 +402,7 @@ function HomePage() {
               to="/shop"
               className="mt-10 inline-flex items-center gap-3 bg-primary px-12 py-4 text-xs uppercase tracking-[0.22em] text-primary-foreground transition-opacity hover:opacity-90"
             >
-              Shop sarees
+              Shop Kota Doria
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </Reveal>
