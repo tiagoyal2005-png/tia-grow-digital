@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Tia Goyal Digital
+
+Build the complete premium personal freelance digital marketing website for Tia Goyal based on the full requirements already provided in this conversation. Create a production-quality, mobile-first personal brand website with Home, About, Services, Blog, Resources, FAQ, Contact, and Book a Call pages. Position Tia as Freelance Digital Marketer, SEO Specialist, and Personal Brand. Primary statement: "Helping Businesses Grow with SEO, AI & Digital Marketing." Goals: generate freelance clients, generate leads, book discovery calls, build personal brand, grow newsletter, offer lead magnets, and prepare for future digital products. Target startup founders, small businesses, entrepreneurs, coaches, consultants, personal brands, e-commerce, B2B, SaaS, local businesses, agencies, and professionals. Services: SEO, Website Development, Social Media Marketing, AI Automation, LinkedIn Personal Branding, Lead Generation, Email Marketing. Use a premium creative visual identity: mauve #B784C7, lilac #DCC6F0, deep plum #5D3A73, white #FFFFFF, soft lavender #FAF8FC, dark text #1F2937. Use Calibri if available, otherwise a fast clean fallback. Create a minimal TG monogram logo. No professional photo is available, so do not create a fake portrait. Hero headline: "Grow Your Business with SEO, AI & Digital Marketing." Supporting copy: "Helping businesses build stronger digital presence, attract qualified leads, and turn online visibility into meaningful growth." Primary CTA everywhere: "Book a Free Discovery Call"; secondary CTA: "Explore Services". Include sticky responsive navigation, abstract SEO/AI marketing hero visual, value proposition, seven interactive service cards, why-work-with-me, five-step process timeline, experience/credentials timeline for 360tf and Briwon Academy, tools section for Brevo/Apollo/Canva, honest portfolio-coming-soon section, free SEO checklist lead magnet, blog with three initial topics, newsletter signup prepared for Brevo, FAQ accordion, final CTA, footer, contact form, WhatsApp button using +91 6687243567, email tiagoyal@gmail.com, and Calendly placeholder. Include About page, detailed Services page with reusable service components and custom quote CTA, scalable Blog with search/categories/article pages, Resources library, Contact page, and Book a Call page. Prepare multilingual architecture with English default and future Hindi support. Prepare integrations for Brevo, Calendly, Google Analytics 4, Search Console, WhatsApp, and future Razorpay/Stripe payments, but do not enable payments now. Use the intended domain tiagoyal.com but do not deploy/configure hosting yet. Create tasteful premium animations: fade, slide, scale, hover, scroll reveal, gradient movement, floating elements, navigation transitions, FAQ accordion, mobile menu, smooth page transitions; respect prefers-reduced-motion. Mobile-first at 320/375/390/414px, tablet and desktop; no horizontal overflow. Optimize performance: minimal JS, lazy images, responsive images, WebP/AVIF, code splitting, minimal third-party scripts, font optimization, excellent Core Web Vitals, no heavy video backgrounds. Implement SEO foundations: semantic HTML, correct H1-H6, metadata, Open Graph, Twitter/X cards, canonical URLs, sitemap, robots.txt, Person/Service/BlogPosting/FAQ/Breadcrumb schema where appropriate, internal linking, alt text, SEO-friendly URLs. Accessibility: keyboard navigation, visible focus, ARIA labels, semantic HTML, accessible forms/accordion, reduced motion. Do not invent testimonials, client logos, awards, certifications, revenue numbers, case studies, reviews, or project results. Since there is no formal portfolio, use "Selected Work — Coming Soon" / "Building My Case Study Library" and make it easy to replace later. Use actual supplied professional information: Tia Goyal; 360tf digital sales/marketing experience; Briwon Academy internship/experience credentials; tools Brevo, Apollo, Canva. Social links should be clearly marked placeholders until real URLs are supplied. Avoid lorem ipsum, fake proof, broken links, console errors, and nonfunctional navigation. Use reusable components and data structures for Navbar, Footer, CTA, ServiceCard, BlogCard, ResourceCard, FAQAccordion, ContactForm, NewsletterForm, PortfolioPlaceholder, etc. Review the final site as a prospective client and optimize the journey: Trust → Clarity → Engagement → Lead Generation → Discovery Call. Make the final UI feel like Personal Brand + Creative Agency + Digital Marketing Consultancy, not a college portfolio or generic freelancer template.
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://tia-grow-digital.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/41a839fd-696d-4881-af1c-d62871a02618).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
